@@ -1,4 +1,5 @@
 using _main.scripts.managers;
+using HurricaneVR.Framework.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -32,12 +33,14 @@ public class Connector : MonoBehaviour
         if (isConnect) return;
         isConnect = true;
         if (_predictObject == null) return;
+        
 
-        _rb.isKinematic = true;
+      
         
         DestroyPredict();
         CalcPosRot(gameObject, _target.gameObject, _caller);
-   }
+        PhysicsConnect(_target.gameObject.transform.parent.gameObject);
+    }
 [Button]
     public void UnConnect()
     {
@@ -45,7 +48,7 @@ public class Connector : MonoBehaviour
         if (!isConnect) return;
         isConnect = false;
         
-        _rb.isKinematic = false;
+
         _rb.constraints = RigidbodyConstraints.None;
 
         var transform1 = transform; // todo refactor this
@@ -86,6 +89,16 @@ public class Connector : MonoBehaviour
        
         var vectorToMove = target.transform.position - caller.transform.position;
         go.transform.position = vectorToMove + transform.position; //move to connector
+    }
+    
+    void PhysicsConnect(GameObject targetObject)
+    {
+        // Create a new FixedJoint and set its properties
+        FixedJoint joint = gameObject.AddComponent<FixedJoint>();
+        joint.connectedBody = targetObject.GetComponent<Rigidbody>();
+        joint.anchor = Vector3.zero;
+        joint.axis = Vector3.forward;
+
     }
     
 }

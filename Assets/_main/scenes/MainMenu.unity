@@ -132,6 +132,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1658343199}
     m_Modifications:
+    - target: {fileID: 1028901897579841781, guid: c997282b1dd73b743bc4a5324a856ba4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1629265281987719593, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: isConnect
@@ -145,17 +150,17 @@ PrefabInstance:
     - target: {fileID: 1780440966682922738, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.2676
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780440966682922738, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.733709
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780440966682922738, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.0993
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1780440966682922738, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
@@ -200,6 +205,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2101765992985408865, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
     - {fileID: 2710225456217214406, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
+    - {fileID: 1028901897579841781, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
 --- !u!4 &30671213 stripped
 Transform:
@@ -11180,6 +11186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1658343199}
   - component: {fileID: 1658343200}
+  - component: {fileID: 1658343201}
   m_Layer: 0
   m_Name: Detail (7)
   m_TagString: Untagged
@@ -11195,7 +11202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658343198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.53, y: 0, z: 1.32}
+  m_LocalPosition: {x: -52.34, y: -15.23, z: 9.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11219,6 +11226,117 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1658343201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658343198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed6e70729ed4913846a8b06675e1581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabBehaviour: 0
+  PoseType: 0
+  TrackingType: 0
+  HoldType: 1
+  GrabControl: 0
+  OverrideGrabTrigger: 0
+  GrabTrigger: 0
+  RequireLineOfSight: 1
+  PoseImmediately: 0
+  ParentHandModel: 0
+  BreakDistance: 1
+  BreakDistanceSource: 0
+  Stationary: 0
+  ReleasedAngularConversionFactor: 0
+  ReleasedVelocityFactor: 1
+  ReleasedAngularFactor: 1
+  GrabIndicator: {fileID: 0}
+  ForceGrabIndicator: {fileID: 0}
+  ShowGrabIndicator: 1
+  ShowTriggerGrabIndicator: 1
+  ShowForceGrabIndicator: 1
+  ForceGrabbable: 1
+  ForcePullOverride: {fileID: 0}
+  JointOverride: {fileID: 0}
+  OneHandStrength: {fileID: 0}
+  TwoHandStrength: {fileID: 0}
+  PullingSettingsOverride: {fileID: 0}
+  HandGrabbedClip: {fileID: 0}
+  SocketGrabPoints: []
+  Rigidbody: {fileID: 0}
+  AutoApplyLayer: 1
+  RequireOverlapClearance: 0
+  OverlapTimeout: 0.1
+  FinalJointMaxAngle: 15
+  FinalJointTimeout: 0.25
+  CollisionParents: []
+  ExtraIgnoreCollisionParents: []
+  GrabColliders: []
+  ConsiderGrabPointAngle: 1
+  UseColliderClosestPoint: 1
+  DisableHandCollision: 0
+  AllowMultiplayerSwap: 0
+  MasterGrabbable: {fileID: 0}
+  LinkedGrabbables: []
+  CollisionDetection: 2
+  PhysicsPoserFallback: 1
+  OverrideMaxDistanceBehaviour: 0
+  MaxDistanceBehaviour: 0
+  OneHandJointSettings: {fileID: 0}
+  TwoHandJointSettings: {fileID: 0}
+  StartingSocket: {fileID: 0}
+  LinkStartingSocket: 0
+  ShowBoundingBox: 0
+  DrawCenterOfMass: 0
+  GrabPoints: []
+  Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  Grabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  Released:
+    m_PersistentCalls:
+      m_Calls: []
+  HoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  HoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  Collided:
+    m_PersistentCalls:
+      m_Calls: []
+  Destroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  HandGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  HandReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  HandFullReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  Socketed:
+    m_PersistentCalls:
+      m_Calls: []
+  UnSocketed:
+    m_PersistentCalls:
+      m_Calls: []
+  GrabPointsMeta: []
+  Grabbers: []
+  HandGrabbers: []
+  Stabbers: []
+  Stabbable: {fileID: 0}
 --- !u!1001 &1668985355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11226,6 +11344,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 96829095}
     m_Modifications:
+    - target: {fileID: 1028901897579841781, guid: c997282b1dd73b743bc4a5324a856ba4,
+        type: 3}
+      propertyPath: CollisionParents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1780440966682922738, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: m_RootOrder
@@ -11287,7 +11410,7 @@ PrefabInstance:
       value: Cube (1)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2101765992985408865, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: c997282b1dd73b743bc4a5324a856ba4, type: 3}
 --- !u!4 &1668985356 stripped
 Transform:
