@@ -1,9 +1,10 @@
-using System;
+using _main.scripts.managers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class Connector : MonoBehaviour
 {
+    // todo move connect to connector 
     [SerializeField] private bool isConnect;
     [SerializeField] private bool roundYaxis;
 
@@ -26,25 +27,29 @@ public class Connector : MonoBehaviour
     }
 [Button]
     public void Connect()
-   {
-       if (isConnect) return;
-       isConnect = true;
-       if (_target == null || _caller == null) return; 
+    {
+        if (ModeController.Instance.mode == ModeController.Mode.Disconnect) return;
+        if (isConnect) return;
+        isConnect = true;
+        if (_predictObject == null) return;
 
-       _rb.constraints = RigidbodyConstraints.FreezeAll;
-       
-       DestroyPredict();
-       CalcPosRot(gameObject, _target.gameObject, _caller);
+        _rb.isKinematic = true;
+        
+        DestroyPredict();
+        CalcPosRot(gameObject, _target.gameObject, _caller);
    }
 [Button]
     public void UnConnect()
     {
+        if (ModeController.Instance.mode == ModeController.Mode.Connect) return;
         if (!isConnect) return;
         isConnect = false;
-            
-        _rb.constraints = RigidbodyConstraints.None;
         
-        gameObject.transform.SetParent(Instantiate(parentPrefab , transform.position, transform.rotation).transform);
+        _rb.isKinematic = false;
+        _rb.constraints = RigidbodyConstraints.None;
+
+        var transform1 = transform; // todo refactor this
+        gameObject.transform.SetParent(Instantiate(parentPrefab , transform1.position, transform1.rotation).transform);
     }
 
     public void Predict(Collider target , GameObject caller)
