@@ -1,5 +1,4 @@
 using _main.scripts.managers;
-using HurricaneVR.Framework.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -20,6 +19,7 @@ public class Connector : MonoBehaviour
     private GameObject _predictObject;
 
     private Rigidbody _rb;
+    private FixedJoint _fixedJoint;
 
 
     private void Start()
@@ -30,16 +30,14 @@ public class Connector : MonoBehaviour
     public void Connect()
     {
         if (ModeController.Instance.mode == ModeController.Mode.Disconnect) return;
+        if (_predictObject == null) return;
         if (isConnect) return;
         isConnect = true;
-        if (_predictObject == null) return;
-        
 
-      
-        
+
         DestroyPredict();
         CalcPosRot(gameObject, _target.gameObject, _caller);
-        PhysicsConnect(_target.gameObject.transform.parent.gameObject);
+        _fixedJoint =PhysicsConnect(_target.gameObject.transform.parent.gameObject);
     }
 [Button]
     public void UnConnect()
@@ -48,8 +46,7 @@ public class Connector : MonoBehaviour
         if (!isConnect) return;
         isConnect = false;
         
-
-        _rb.constraints = RigidbodyConstraints.None;
+        Destroy(_fixedJoint);
 
         var transform1 = transform; // todo refactor this
         gameObject.transform.SetParent(Instantiate(parentPrefab , transform1.position, transform1.rotation).transform);
@@ -81,24 +78,27 @@ public class Connector : MonoBehaviour
     private void CalcPosRot(GameObject go,GameObject target , GameObject caller)
     {
         go.transform.SetParent(target.transform.parent.parent);
-       
+        
         var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ;
-       
-        go.transform.localRotation = Quaternion.Euler(0,yAxis,-180); // rotate to connector
-     
-       
+
+        var localRotationEulerAngles = target.transform.parent.localRotation.eulerAngles;
+        var transformLocalRotation = new Vector3(0,yAxis,-180) - new Vector3(localRotationEulerAngles.x , localRotationEulerAngles.y,0);
+        go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // rotate to connector
+        
+        
         var vectorToMove = target.transform.position - caller.transform.position;
         go.transform.position = vectorToMove + transform.position; //move to connector
+
     }
     
-    void PhysicsConnect(GameObject targetObject)
+    FixedJoint PhysicsConnect(GameObject targetObject)
     {
         // Create a new FixedJoint and set its properties
         FixedJoint joint = gameObject.AddComponent<FixedJoint>();
         joint.connectedBody = targetObject.GetComponent<Rigidbody>();
         joint.anchor = Vector3.zero;
         joint.axis = Vector3.forward;
-
+        return joint;
     }
     
 }
