@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e3852dad76a2142bee6116746dac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isConnect: 0
   roundYaxis: 1
   parentPrefab: {fileID: 4866080654931468056, guid: 8df5c866fdd09b14d86185bb5605b17f,
     type: 3}
@@ -360,6 +359,7 @@ GameObject:
   - component: {fileID: 6498695095649211358}
   - component: {fileID: 5146133351095683960}
   - component: {fileID: 6588295942750507161}
+  - component: {fileID: 1582627885478641255}
   m_Layer: 0
   m_Name: Conector-
   m_TagString: Untagged
@@ -412,8 +412,8 @@ MonoBehaviour:
   enterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
+      - m_Target: {fileID: 1582627885478641255}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
         m_MethodName: Predict
         m_Mode: 0
         m_Arguments:
@@ -427,8 +427,8 @@ MonoBehaviour:
   stayEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
+      - m_Target: {fileID: 1582627885478641255}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
         m_MethodName: Predict
         m_Mode: 0
         m_Arguments:
@@ -442,9 +442,9 @@ MonoBehaviour:
   exitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
-        m_MethodName: DestroyPredict
+      - m_Target: {fileID: 1582627885478641255}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
+        m_MethodName: Predict
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -454,6 +454,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1582627885478641255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153816601118831675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68cd37f7054efb8f3df95656e7becc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnect: 0
+  fixedJoint: {fileID: 0}
+  detail: {fileID: 1629265281987719593}
 --- !u!1 &6963720408846050055
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +480,7 @@ GameObject:
   - component: {fileID: 3757879585995615915}
   - component: {fileID: 5767932044032560214}
   - component: {fileID: 7864078462871027179}
+  - component: {fileID: 5775387536548057927}
   m_Layer: 0
   m_Name: Conector-
   m_TagString: Untagged
@@ -517,8 +533,8 @@ MonoBehaviour:
   enterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
+      - m_Target: {fileID: 5775387536548057927}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
         m_MethodName: Predict
         m_Mode: 0
         m_Arguments:
@@ -532,8 +548,8 @@ MonoBehaviour:
   stayEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
+      - m_Target: {fileID: 5775387536548057927}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
         m_MethodName: Predict
         m_Mode: 0
         m_Arguments:
@@ -547,10 +563,10 @@ MonoBehaviour:
   exitEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629265281987719593}
-        m_TargetAssemblyTypeName: Connector, Assembly-CSharp
+      - m_Target: {fileID: 5775387536548057927}
+        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
         m_MethodName: DestroyPredict
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -559,6 +575,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5775387536548057927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963720408846050055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68cd37f7054efb8f3df95656e7becc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnect: 0
+  fixedJoint: {fileID: 0}
+  detail: {fileID: 1629265281987719593}
 --- !u!1 &7590812195523599744
 GameObject:
   m_ObjectHideFlags: 0
