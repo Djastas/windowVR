@@ -36,11 +36,13 @@ public class Connector : MonoBehaviour
 
 
         DestroyPredict();
+        
+       
         CalcPosRot(gameObject, _target.gameObject, _caller);
         _fixedJoint =PhysicsConnect(_target.gameObject.transform.parent.gameObject);
     }
 [Button]
-    public void UnConnect()
+    public void Disconnect()
     {
         if (ModeController.Instance.mode == ModeController.Mode.Connect) return;
         if (!isConnect) return;
@@ -63,7 +65,10 @@ public class Connector : MonoBehaviour
         _predictObject = _predictObject ? _predictObject: Instantiate(visual , gameObject.transform, false); // checking for null
         
         _predictObject.GetComponent<Renderer>().material = predictMat; // set material
+        
+
         CalcPosRot(_predictObject,target.gameObject,caller);
+        
     }
     public void DestroyPredict(Collider target , GameObject caller)
     {
@@ -79,6 +84,11 @@ public class Connector : MonoBehaviour
     {
         go.transform.SetParent(target.transform.parent.parent);
         
+        var vectorToMove = target.transform.position - caller.transform.position;
+        go.transform.position = vectorToMove + transform.position; //move to connector
+        
+        go.transform.SetParent(target.transform.parent);
+        
         var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ;
 
         var localRotationEulerAngles = target.transform.parent.localRotation.eulerAngles;
@@ -86,8 +96,7 @@ public class Connector : MonoBehaviour
         go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // rotate to connector
         
         
-        var vectorToMove = target.transform.position - caller.transform.position;
-        go.transform.position = vectorToMove + transform.position; //move to connector
+        go.transform.SetParent(target.transform.parent.parent);
 
     }
     
