@@ -82,22 +82,23 @@ public class Connector : MonoBehaviour
     
     private void CalcPosRot(GameObject go,GameObject target , GameObject caller)
     {
-        go.transform.SetParent(target.transform.parent.parent);
+        var parent = target.transform.parent;
         
-        var vectorToMove = target.transform.position - caller.transform.position;
+        go.transform.SetParent(parent.parent); // set parent to calc offset
+        
+        var vectorToMove = target.transform.position - caller.transform.position; // calc offset
         go.transform.position = vectorToMove + transform.position; //move to connector
         
-        go.transform.SetParent(target.transform.parent);
+        go.transform.SetParent(target.transform.parent);// set parent to calc rotation
         
-        var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ;
-
-        var localRotationEulerAngles = target.transform.parent.localRotation.eulerAngles;
-        var transformLocalRotation = new Vector3(0,yAxis,-180) - new Vector3(localRotationEulerAngles.x , localRotationEulerAngles.y,0);
-        go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // rotate to connector
+        var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ; // round y axis to 90degrees
+        
+        var localRotationEulerAngles = parent.localRotation.eulerAngles; // save long link
+        var transformLocalRotation = new Vector3(0,yAxis,-180) - new Vector3(localRotationEulerAngles.x , localRotationEulerAngles.y,0); // combine angle
+        go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // set rotation
         
         
-        go.transform.SetParent(target.transform.parent.parent);
-
+        go.transform.SetParent(parent.parent);
     }
     
     FixedJoint PhysicsConnect(GameObject targetObject)
