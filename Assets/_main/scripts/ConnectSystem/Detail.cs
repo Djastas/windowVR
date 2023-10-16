@@ -112,7 +112,7 @@ namespace _main.scripts.ConnectSystem
         private void CalcPosRot(GameObject go,GameObject target , GameObject caller)
         {
             var parent = target.transform.parent;
-        
+            
             go.transform.SetParent(parent);// set parent to calc rotation
             
             var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ; // round y axis to 90degrees
@@ -120,18 +120,22 @@ namespace _main.scripts.ConnectSystem
             var parentEulerAngles = parent.localRotation.eulerAngles; // save long link
             var transformLocalRotation = new Vector3(0,yAxis,0) - new Vector3(parentEulerAngles.x , parentEulerAngles.y,0); // combine angle
             go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // set rotation
-
+            
             
             
             
             go.transform.SetParent(parent.parent); // set parent to calc offset
-        
+            
             var vectorToMove = target.transform.position - caller.transform.position; // calc offset
             go.transform.position = vectorToMove + transform.position; //move to connector
-        
-          
-        
+            
+            
+            
             go.transform.SetParent(parent.parent);
+
+            // var toMove = caller.transform.position - _target.transform.position;
+            // go.transform.position -= toMove;
+
         }
         
     }
