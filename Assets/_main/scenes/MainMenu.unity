@@ -2039,7 +2039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: {fileID: 617516853}
   map: {fileID: 1933925310}
-  tutorialSceneName: 
+  tutorialSceneName: TutorialModeSceneL1
   freeSceneName: FreeModeScene
   controlSceneName: 
   mapsData: {fileID: 11400000, guid: 95656531f3d0d9b438256062a8824576, type: 2}

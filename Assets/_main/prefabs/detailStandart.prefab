@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1028901897579841781}
   - component: {fileID: 7458130910413899758}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: detailStandart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,11 +51,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e3852dad76a2142bee6116746dac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 
   roundYaxis: 1
   parentPrefab: {fileID: 4866080654931468056, guid: 8df5c866fdd09b14d86185bb5605b17f,
     type: 3}
   visual: {fileID: 4940409200192727783}
   predictMat: {fileID: 2100000, guid: 308f9893946ded44cb1972c80baa8c52, type: 2}
+  _callers: []
 --- !u!54 &2710225456217214406
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -426,26 +428,14 @@ MonoBehaviour:
         m_CallState: 2
   stayEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1582627885478641255}
-        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
-        m_MethodName: Predict
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   exitEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1582627885478641255}
         m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
-        m_MethodName: Predict
-        m_Mode: 0
+        m_MethodName: DestroyPredict
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -547,19 +537,7 @@ MonoBehaviour:
         m_CallState: 2
   stayEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5775387536548057927}
-        m_TargetAssemblyTypeName: _main.scripts.ConnectSystem.Connector, Assembly-CSharp
-        m_MethodName: Predict
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   exitEvent:
     m_PersistentCalls:
       m_Calls:

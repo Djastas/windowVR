@@ -12,7 +12,9 @@ namespace _main.scripts.ConnectSystem
 
         public void Predict(Collider target)
         {
-            detail.Predict(target,this);
+           
+                detail.Predict(target,this);
+            
         }
         public void DestroyPredict()
         {
