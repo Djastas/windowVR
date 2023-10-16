@@ -25,7 +25,7 @@ namespace _main.scripts.ConnectSystem
         public FixedJoint PhysicsConnect(GameObject targetObject)
         {
             // Create a new FixedJoint and set its properties
-            FixedJoint joint = gameObject.AddComponent<FixedJoint>();
+            FixedJoint joint = detail.gameObject.AddComponent<FixedJoint>();
             joint.connectedBody = targetObject.GetComponent<Rigidbody>();
             joint.anchor = Vector3.zero;
             joint.axis = Vector3.forward;

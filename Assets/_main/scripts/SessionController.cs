@@ -31,9 +31,9 @@ public class SessionController : MonoBehaviour
     {
         var i = mode.value switch
         {
-            1 => tutorialSceneName,
-            2 => freeSceneName,
-            3 => controlSceneName,
+            0 => tutorialSceneName,
+            1 => freeSceneName,
+            2 =>controlSceneName ,
             _ => ""
         };
         SceneManager.LoadScene(i);

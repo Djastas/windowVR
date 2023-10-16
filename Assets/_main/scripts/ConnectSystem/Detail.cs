@@ -42,6 +42,8 @@ namespace _main.scripts.ConnectSystem
             _caller.isConnect = true;
             _isPredict = true;
 
+            SessionManager.Instance.RegConnection(id);
+
             DestroyPredict();
             
             CalcPosRot(gameObject, _target.gameObject, _caller.gameObject);
