@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _main.scripts.managers;
 using Sirenix.OdinInspector;
@@ -27,6 +28,7 @@ namespace _main.scripts.ConnectSystem
         private Rigidbody _rb;
         private GameObject _predictCallerObject;
 
+       
 
         private void Start()
         {
@@ -42,7 +44,7 @@ namespace _main.scripts.ConnectSystem
             _caller.isConnect = true;
             _isPredict = true;
 
-            SessionManager.Instance.RegConnection(id);
+            // SessionManager.Instance.RegConnection(id);
 
             DestroyPredict();
             
@@ -73,33 +75,35 @@ namespace _main.scripts.ConnectSystem
             {
                 _callers.Add(caller);
             }
-
+            
             if (_isPredict)return;
-
+            
             _target = target;
             _caller = caller;
-
+            
             if (_predictObject)
             {
                 _predictObject = _predictObject;
             }
             else
             {
-                _predictObject = Instantiate(visual, gameObject.transform, false);
+                _predictObject = Instantiate(visual, gameObject.transform ,false);
+                _predictObject.transform.SetParent(gameObject.transform.parent);
                 _predictCallerObject = new GameObject("Tmp")
                 {
                     transform =
                     {
+                        parent = _predictObject.transform,
                         position = caller.transform.position
                     }
                 };
-
-                Instantiate(caller.gameObject, _predictObject.transform, false); // checking for null
+            
+              
                 CalcPosRot(_predictObject, target.gameObject, _predictCallerObject);
             }
-
-           
-
+            
+            
+            
             _predictObject.GetComponent<Renderer>().material = predictMat; // set material
             
         }
@@ -111,33 +115,47 @@ namespace _main.scripts.ConnectSystem
         }
         private void CalcPosRot(GameObject go,GameObject target , GameObject caller)
         {
-            var parent = target.transform.parent;
-            
-            go.transform.SetParent(parent);// set parent to calc rotation
-            
-            var yAxis = roundYaxis ?  Mathf.Round(transform.localRotation.eulerAngles.y / 90) * 90  : transform.localRotation.eulerAngles.y ; // round y axis to 90degrees
-            
-            var parentEulerAngles = parent.localRotation.eulerAngles; // save long link
-            var transformLocalRotation = new Vector3(0,yAxis,0) - new Vector3(parentEulerAngles.x , parentEulerAngles.y,0); // combine angle
-            go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // set rotation
-            
-            
-            
-            
-            go.transform.SetParent(parent.parent); // set parent to calc offset
-            
-            var vectorToMove = target.transform.position - caller.transform.position; // calc offset
-            go.transform.position = vectorToMove + transform.position; //move to connector
-            
-            
-            
-            go.transform.SetParent(parent.parent);
+            // var parent = target.transform.parent;
+            //
+            // go.transform.SetParent(parent);// set parent to calc rotation
+            //
+            //
+            //
+            // var parentEulerAngles = parent.localRotation.eulerAngles; // save long link
+            // var transformLocalRotation = new Vector3(0,yAxis,0) - new Vector3(parentEulerAngles.x , parentEulerAngles.y,0); // combine angle
+            // go.transform.localRotation =  Quaternion.Euler(transformLocalRotation.x,transformLocalRotation.y,transformLocalRotation.z); // set rotation
+            //
+            //
+            //
+            //
+            // go.transform.SetParent(parent.parent); // set parent to calc offset
+            //
+            // var vectorToMove = target.transform.position - caller.transform.position; // calc offset
+            // go.transform.position = vectorToMove + transform.position; //move to connector
+            //
+            //
+            //
+            // go.transform.SetParent(parent.parent);
 
-            // var toMove = caller.transform.position - _target.transform.position;
-            // go.transform.position -= toMove;
+
+            var originalRotateAngle = go.transform.localRotation.eulerAngles.y;
+            if (roundYaxis)
+            {
+                originalRotateAngle =  Mathf.Round( originalRotateAngle / 90) * 90 ; // round y axis to 90degrees
+            }
+            var deltaRotation = target.transform.rotation * Quaternion.Inverse(caller.transform.rotation);
+            go.transform.rotation =deltaRotation * go.transform.rotation;
+            go.transform.Rotate(new Vector3(0,originalRotateAngle,0),Space.Self);
+            
+          
+            
+            var displacement = target.transform.position - caller.transform.position;
+            go.transform.position += displacement;
+
+
 
         }
-        
+
     }
 }
   
