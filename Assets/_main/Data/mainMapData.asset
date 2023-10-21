@@ -16,3 +16,6 @@ MonoBehaviour:
   - id: testRoom
     name: "\u0442\u0435\u0441\u0442"
     preview: {fileID: 0}
+  - id: DemoScene_01
+    name: "\u043B\u0435\u0441"
+    preview: {fileID: 0}

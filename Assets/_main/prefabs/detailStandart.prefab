@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
+  visual: {fileID: 4940409200192727783}
   roundYaxis: 1
   parentPrefab: {fileID: 4866080654931468056, guid: 8df5c866fdd09b14d86185bb5605b17f,
     type: 3}
-  visual: {fileID: 4940409200192727783}
   predictMat: {fileID: 2100000, guid: 308f9893946ded44cb1972c80baa8c52, type: 2}
   connectors: []
   _callers: []
@@ -73,7 +73,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1028901897579841781
 MonoBehaviour:

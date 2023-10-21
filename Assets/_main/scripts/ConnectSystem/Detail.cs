@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using _main.scripts.managers;
 using Sirenix.OdinInspector;
@@ -50,7 +49,7 @@ namespace _main.scripts.ConnectSystem
             DestroyPredict();
             
             CalcPosRot(gameObject, _target.gameObject, _caller.gameObject);
-            _caller.fixedJoint = _caller.PhysicsConnect(_target.gameObject.transform.parent.gameObject);
+            _caller.fixedJoint = _caller.PhysicsConnect(GetDetailInAllParents(_target.gameObject).gameObject);
         }
 
         private void Paint()
@@ -58,13 +57,13 @@ namespace _main.scripts.ConnectSystem
             visual.GetComponent<Renderer>().material.color = ModeController.Instance.paintColor;
         }
 
-        private Detail GetDetailInAllParents()
+        private Rigidbody GetDetailInAllParents(GameObject go)
         {
-            var tmp = _target.transform;
-            Detail targetDetail = null;
+            var tmp = go.transform;
+            Rigidbody targetDetail = null;
             while (targetDetail == null)
             {
-                targetDetail = _target.GetComponentInParent<Detail>();
+                targetDetail = go.GetComponentInParent<Rigidbody>();
                 tmp = tmp.transform.parent;
             }
 
@@ -123,7 +122,7 @@ namespace _main.scripts.ConnectSystem
             
             
             
-            _predictObject.GetComponent<Renderer>().material = predictMat; // set material
+            // _predictObject.GetComponent<Renderer>().material = predictMat; // set material
             
         }
         public void DestroyPredict()
