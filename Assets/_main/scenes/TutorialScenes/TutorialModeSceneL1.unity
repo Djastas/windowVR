@@ -1096,7 +1096,7 @@ Transform:
   - {fileID: 1507285958}
   - {fileID: 1970827156}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330054475
 GameObject:
@@ -6870,7 +6870,7 @@ Transform:
   - {fileID: 239347108}
   - {fileID: 1825132432}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1372771328
 PrefabInstance:
@@ -7006,7 +7006,7 @@ Transform:
   - {fileID: 1002585165}
   - {fileID: 393325912}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460192358
 GameObject:
@@ -7375,7 +7375,7 @@ PrefabInstance:
     - target: {fileID: 6651623374674983619, guid: d0353a904bc6ce5459b50c2ba3dbb304,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6651623374674983619, guid: d0353a904bc6ce5459b50c2ba3dbb304,
         type: 3}
@@ -7505,6 +7505,31 @@ PrefabInstance:
     - target: {fileID: 6651623374740484155, guid: d0353a904bc6ce5459b50c2ba3dbb304,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659365108448529273, guid: d0353a904bc6ce5459b50c2ba3dbb304,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659365108448529273, guid: d0353a904bc6ce5459b50c2ba3dbb304,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585787747972563296, guid: d0353a904bc6ce5459b50c2ba3dbb304,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585787747972563296, guid: d0353a904bc6ce5459b50c2ba3dbb304,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585787747972563296, guid: d0353a904bc6ce5459b50c2ba3dbb304,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8046484191937871034, guid: d0353a904bc6ce5459b50c2ba3dbb304,
@@ -9025,7 +9050,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh105636
+  m_Name: pb_Mesh51546
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

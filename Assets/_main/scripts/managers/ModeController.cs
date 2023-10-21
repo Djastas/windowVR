@@ -1,5 +1,4 @@
-﻿using System;
-using StvDEV.StarterPack;
+﻿using StvDEV.StarterPack;
 using UnityEngine;
 
 namespace _main.scripts.managers
@@ -7,6 +6,9 @@ namespace _main.scripts.managers
     public class ModeController : MonoBehaviourSingleton<ModeController>
     {
         public Mode mode;
+        public Color paintColor;
+
+       
 
         public void SetBuildMode()
         {
@@ -15,10 +17,15 @@ namespace _main.scripts.managers
         public void SetRemovedMode()
         {
             mode = Mode.Disconnect;
+        } 
+        public void SetPaintMode()
+        {
+            mode = Mode.Paint;
         }
+        
         public enum Mode
         {
-        Connect,Disconnect
+        Connect,Disconnect,Paint
         }
     }
     

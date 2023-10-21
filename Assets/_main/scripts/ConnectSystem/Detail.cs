@@ -9,11 +9,11 @@ namespace _main.scripts.ConnectSystem
     public class Detail : MonoBehaviour
     {
         public string id;
+        public GameObject visual;
+
         [SerializeField] private bool roundYaxis;
         
-
         [SerializeField] private GameObject parentPrefab;
-        [SerializeField] private GameObject visual;
         [SerializeField] private Material predictMat;
         [SerializeField] private List<Connector> connectors;
         private bool _isPredict; //todo refactor this 
@@ -38,7 +38,8 @@ namespace _main.scripts.ConnectSystem
         [Button]
         public void Connect()
         {
-            if (ModeController.Instance.mode == ModeController.Mode.Disconnect) return;
+            if (ModeController.Instance.mode == ModeController.Mode.Paint) { Paint(); return; }
+            if (ModeController.Instance.mode != ModeController.Mode.Connect) return;
             if (_predictObject == null) return;
             if (_caller.isConnect) return;
             _caller.isConnect = true;
@@ -50,6 +51,24 @@ namespace _main.scripts.ConnectSystem
             
             CalcPosRot(gameObject, _target.gameObject, _caller.gameObject);
             _caller.fixedJoint = _caller.PhysicsConnect(_target.gameObject.transform.parent.gameObject);
+        }
+
+        private void Paint()
+        {
+            visual.GetComponent<Renderer>().material.color = ModeController.Instance.paintColor;
+        }
+
+        private Detail GetDetailInAllParents()
+        {
+            var tmp = _target.transform;
+            Detail targetDetail = null;
+            while (targetDetail == null)
+            {
+                targetDetail = _target.GetComponentInParent<Detail>();
+                tmp = tmp.transform.parent;
+            }
+
+            return targetDetail;
         }
 
         [Button]
