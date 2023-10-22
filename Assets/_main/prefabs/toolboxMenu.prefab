@@ -83,7 +83,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: dcf5082f059bb724c988b90b6bfdf02f, type: 3}
+  - {fileID: 8300000, guid: 66e66062a778d18478bb55330ce9ed48, type: 3}
+  - {fileID: 8300000, guid: e491dc93b2ab3224aadef95dc629e400, type: 3}
+  - {fileID: 8300000, guid: f9deeedb6d4b38d4196429a7e3d12e38, type: 3}
+  - {fileID: 8300000, guid: 62b0a169be294c0439d677f134a80862, type: 3}
   source: {fileID: 1881685287708143420}
   audioName: {fileID: 5562926789349940854}
   progressBar: {fileID: 1287748145575731035}
@@ -7519,7 +7522,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.108
   m_Pitch: 1
   Loop: 0
   Mute: 0
