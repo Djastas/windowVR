@@ -15,6 +15,10 @@ namespace _main.scripts.ConnectSystem
         [SerializeField] private GameObject parentPrefab;
         [SerializeField] private Material predictMat;
         [SerializeField] private List<Connector> connectors;
+        [SerializeField] private AudioClip con;
+        [SerializeField] private AudioClip dis;
+        [SerializeField] private AudioClip paint;
+        [SerializeField] private AudioSource AudioSource;
         private bool _isPredict; //todo refactor this 
     
 
@@ -44,17 +48,22 @@ namespace _main.scripts.ConnectSystem
             _caller.isConnect = true;
             _isPredict = true;
 
-            // SessionManager.Instance.RegConnection(id);
+            SessionManager.Instance.RegConnection(id);
 
             DestroyPredict();
             
             CalcPosRot(gameObject, _target.gameObject, _caller.gameObject);
             _caller.fixedJoint = _caller.PhysicsConnect(GetDetailInAllParents(_target.gameObject).gameObject);
+
+            AudioSource.clip = con;
+            AudioSource.Play();
         }
 
         private void Paint()
         {
             visual.GetComponent<Renderer>().material.color = ModeController.Instance.paintColor;
+            AudioSource.clip = dis;
+            AudioSource.Play();
         }
 
         private Rigidbody GetDetailInAllParents(GameObject go)
@@ -81,9 +90,12 @@ namespace _main.scripts.ConnectSystem
                 Destroy(connector != null ? connector.fixedJoint : null);
             }
             
-
+            SessionManager.Instance.RegDisconnection(id);
             var instantiate = Instantiate(parentPrefab, transform.position, transform.rotation);
             gameObject.transform.SetParent(instantiate.transform);
+            
+            AudioSource.clip = dis;
+            AudioSource.Play();
         }
 
         public void Predict(Collider target, Connector caller)

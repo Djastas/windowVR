@@ -24,7 +24,19 @@ namespace _main.scripts.managers
             var tmp = new ConnectData
             {
                 Time = time,
-                ID = id
+                ID = id,
+                type = "con"
+            };
+            _connectsData.Add(tmp);
+        }
+        public void RegDisconnection(string id)
+        {
+            var time = new FormatTime(TimeElapsed);
+            var tmp = new ConnectData
+            {
+                Time = time,
+                ID = id,
+                type = "dis"
             };
             _connectsData.Add(tmp);
         }
@@ -35,6 +47,7 @@ namespace _main.scripts.managers
     [Serializable]
     public class ConnectData
     {
+        public string type;
         public string ID;
         public FormatTime Time;
     }

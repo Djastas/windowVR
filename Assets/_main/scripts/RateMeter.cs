@@ -1,20 +1,36 @@
-using Sirenix.OdinInspector;
+using _main.scripts.managers;
+using TMPro;
 using UnityEngine;
 
 namespace _main.scripts
 {
   public class RateMeter : MonoBehaviour
   {
-    [SerializeField] private GameObject idealObject;
-    [Button]
-    public void Rate(GameObject goToTest)
+    [SerializeField] private TMP_Text rate;
+    [SerializeField] private TMP_Text speed;
+    [SerializeField] private int detailCount;
+    public void Rate()
     {
-      var i = GetComponentsInChildren<Collider>();
-      foreach (var col in i)
+      var connect = 0;
+      var disconnect = 0;
+
+      foreach (var connectData in SessionManager.Instance._connectsData)
       {
-        Debug.Log(col.bounds.size);
+        switch (connectData.type)
+        {
+          case "con":
+            connect++;
+            break;
+          case "des":
+            disconnect--;
+            break;
+        }
       }
-     
+
+      rate.text =(10 - (connect - disconnect - detailCount)).ToString();
+      
+      var time = SessionManager.Instance._connectsData[SessionManager.Instance._connectsData.Count].Time;
+      speed.text = $"час:{time.Hour}мин:{time.Minutes} сек:{time.Seconds}";
     }
   
   }
