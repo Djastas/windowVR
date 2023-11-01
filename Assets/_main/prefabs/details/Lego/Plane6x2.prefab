@@ -261,7 +261,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1896463113823803124
 GameObject:
@@ -306,7 +306,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2549046749022084388
 GameObject:
@@ -460,7 +460,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3377052923607416156
 GameObject:
@@ -723,7 +723,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6664677007363659408
 GameObject:
@@ -768,7 +768,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8945892465476278452
 GameObject:
@@ -922,7 +922,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6908165925850923347
 PrefabInstance:
@@ -931,6 +931,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 881159334436451292, guid: c997282b1dd73b743bc4a5324a856ba4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1586991478071532947, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1211,6 +1216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0.00000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896951555683378089, guid: c997282b1dd73b743bc4a5324a856ba4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8482351739753352564, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
