@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +21,7 @@ public class MusicPlayer : MonoBehaviour
     {
         UpdateAudioData(audioClips[_currentIndex]);
     }
-
+[Button]
     public void Next()
     {
         _currentIndex++;
@@ -41,6 +41,8 @@ public class MusicPlayer : MonoBehaviour
 
     private void Update()
     {
+        if (!source.isPlaying) { Next(); return; }
+        
         var timeValue = source.time / source.clip.length;
         if (progressBar.value != _lastProgressBarValue)
         {
