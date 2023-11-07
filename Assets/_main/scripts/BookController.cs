@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BookController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> pages;
+    public List<GameObject> pages;
     
     private int _pageIndex;
     private int _pageMax;

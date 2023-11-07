@@ -12,7 +12,11 @@ namespace _main.scripts
         public void SaveAllData()
         {
             CsvUtil.SaveObject(SessionManager.Instance._connectsData,"TestSave.csv");
-
+            Debug.Log("success safe");
+            Debug.Log(SessionManager.Instance._connectsData.ToString());
         }
+        
+     
+        
     }
 }
