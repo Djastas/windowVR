@@ -3,18 +3,21 @@ using _main.scripts;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SessionController : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown mode;
+    [SerializeField] private TMP_Dropdown model;
     [SerializeField] private TMP_Dropdown map;
 
     [SerializeField] private string tutorialSceneName;
     [SerializeField] private string freeSceneName;
     [SerializeField] private string controlSceneName;
 
+    [SerializeField] private InstructionList instructionList;
+
     [SerializeField] private MapsData mapsData;
+    [SerializeField] private AsyncLoad asyncLoad;
 
     private void Start()
     {
@@ -29,6 +32,7 @@ public class SessionController : MonoBehaviour
 [Button]
     public void Load()
     {
+        DataTransfer.InstructionIndex = instructionList.Instructions[model.value].id;
         var i = mode.value switch
         {
             0 => tutorialSceneName,
@@ -36,7 +40,7 @@ public class SessionController : MonoBehaviour
             2 =>controlSceneName ,
             _ => ""
         };
-        SceneManager.LoadScene(i);
-        SceneManager.LoadScene(mapsData.mapsData[map.value].id,LoadSceneMode.Additive);
+        asyncLoad.AsyncLoading(i,mapsData.mapsData[map.value].id);
+        // SceneManager.LoadScene(mapsData.mapsData[map.value].id,LoadSceneMode.Additive);
     }
 }
