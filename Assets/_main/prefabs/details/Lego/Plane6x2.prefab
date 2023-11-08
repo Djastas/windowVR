@@ -978,6 +978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1629265281987719593, guid: c997282b1dd73b743bc4a5324a856ba4,
         type: 3}
+      propertyPath: id
+      value: Plane6x2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1629265281987719593, guid: c997282b1dd73b743bc4a5324a856ba4,
+        type: 3}
       propertyPath: connectors.Array.size
       value: 6
       objectReference: {fileID: 0}
