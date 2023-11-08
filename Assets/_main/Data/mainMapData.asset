@@ -19,3 +19,6 @@ MonoBehaviour:
   - id: DemoScene_01
     name: "\u043B\u0435\u0441"
     preview: {fileID: 0}
+  - id: NOTLOADED
+    name: "sci-fi \u0440\u044B\u043D\u043E\u043A"
+    preview: {fileID: 0}

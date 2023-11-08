@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1515829, g: 0.15147191, b: 0.19517085, a: 1}
+  m_IndirectSpecularColor: {r: 0.15158603, g: 0.15147693, b: 0.1951764, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3492,7 +3492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u043B\u0435\u0441"
+  m_text: "\u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1080bcf0b9144854cabad246085d6ea4, type: 2}
   m_sharedMaterial: {fileID: -8808612248383081370, guid: 1080bcf0b9144854cabad246085d6ea4,
@@ -5127,12 +5127,14 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 968453380}
   m_ItemImage: {fileID: 0}
-  m_Value: 1
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: "\u0441\u0442\u0430\u043D\u0434\u0430\u0440\u0442"
       m_Image: {fileID: 0}
     - m_Text: "\u043B\u0435\u0441"
+      m_Image: {fileID: 0}
+    - m_Text: "sci fi \u0440\u044B\u043D\u043E\u043A"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5165,8 +5167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 166.3, y: -286.4}
-  m_SizeDelta: {x: 204.56, y: 30}
+  m_AnchoredPosition: {x: 154.6, y: -286.4}
+  m_SizeDelta: {x: 230.52, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2096507035
 GameObject:

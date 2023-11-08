@@ -40,6 +40,7 @@ namespace _main.scripts
 
             yield return null;
         }
+        //todo progres bar
         
         public Detail GetDetail(string id)
         {

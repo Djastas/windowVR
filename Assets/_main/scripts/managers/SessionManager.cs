@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using StvDEV.StarterPack;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace _main.scripts.managers
 {
@@ -9,6 +11,7 @@ namespace _main.scripts.managers
     {
         public float TimeElapsed;
         [SerializeField]public List<ConnectData> _connectsData;
+        public UnityEvent onDataChange;
 
         void Update()
         {
@@ -27,6 +30,7 @@ namespace _main.scripts.managers
                 type = "con"
             };
             _connectsData.Add(tmp);
+            onDataChange?.Invoke();
         }
         public void RegDisconnection(string id)
         {
@@ -38,6 +42,7 @@ namespace _main.scripts.managers
                 type = "dis"
             };
             _connectsData.Add(tmp);
+            onDataChange?.Invoke();
         }
 
       
