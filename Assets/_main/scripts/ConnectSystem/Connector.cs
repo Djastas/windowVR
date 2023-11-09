@@ -9,7 +9,7 @@ namespace _main.scripts.ConnectSystem
         public bool isConnect;
         public FixedJoint fixedJoint;
         
-        [SerializeField] private Detail detail;
+        public Detail detail;
 
 
         public void Predict(Collider target)
