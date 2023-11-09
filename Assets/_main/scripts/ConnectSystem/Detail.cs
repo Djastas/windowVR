@@ -62,7 +62,7 @@ namespace _main.scripts.ConnectSystem
         private void Paint()
         {
             visual.GetComponent<Renderer>().material.color = ModeController.Instance.paintColor;
-            AudioSource.clip = dis;
+            AudioSource.clip = paint;
             AudioSource.Play();
         }
 
