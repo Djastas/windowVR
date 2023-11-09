@@ -82,6 +82,7 @@ namespace _main.scripts.ConnectSystem
         [Button]
         public void Disconnect()
         {
+            if (ModeController.Instance.mode == ModeController.Mode.Paint) { Paint(); return; }
             if (ModeController.Instance.mode == ModeController.Mode.Connect) return;
             _isPredict = false;
             foreach (var connector in connectors)

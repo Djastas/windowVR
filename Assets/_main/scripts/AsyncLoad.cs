@@ -28,15 +28,14 @@ public class AsyncLoad: MonoBehaviour
 
         
         _asyncEnvironmentScene = SceneManager.LoadSceneAsync(environmentSceneIndex,LoadSceneMode.Additive); // load environment scene
-        
+        _asyncOperation.allowSceneActivation = false;
+        _asyncEnvironmentScene.allowSceneActivation = false;
         
         loadAction.Invoke();
-        while (!_asyncOperation.isDone && !_asyncEnvironmentScene.isDone)
-        {
-            yield return null;
-        }
+        
       
-        yield return new WaitForSeconds(4);
+      
+        yield return new WaitForSeconds(10);
         animator.SetBool("IsUp",true);
         Debug.Log("Load Complete");
         _asyncOperation.allowSceneActivation = true;

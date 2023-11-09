@@ -2989,7 +2989,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: dissconnect
+          m_StringArgument: Dissconnect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6651623373970362440
@@ -4279,11 +4279,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: {fileID: 6651623375085804661}
+  model: {fileID: 0}
   map: {fileID: 6651623374415489349}
   tutorialSceneName: TutorialModeSceneL1
   freeSceneName: FreeModeScene
   controlSceneName: 
+  instructionList: {fileID: 0}
   mapsData: {fileID: 11400000, guid: 95656531f3d0d9b438256062a8824576, type: 2}
+  asyncLoad: {fileID: 0}
 --- !u!1 &6651623374415489348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,7 +5038,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: connect
+          m_StringArgument: Connect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6651623374740484154
@@ -7068,7 +7071,7 @@ MonoBehaviour:
     dataTransferEvent:
       m_PersistentCalls:
         m_Calls: []
-  - Go: {fileID: 6651623375840442634}
+  - Go: {fileID: 5410876132607546528}
     Index: main
     dataTransferEvent:
       m_PersistentCalls:
@@ -7970,7 +7973,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: paint
+          m_StringArgument: Paint
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8258107915841119916
