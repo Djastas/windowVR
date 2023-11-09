@@ -12,6 +12,7 @@ namespace _main.scripts.managers
         public float TimeElapsed;
         [SerializeField]public List<ConnectData> _connectsData;
         public UnityEvent onDataChange;
+        public bool breakJoints;
 
         void Update()
         {

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17416655, g: 0.2095949, b: 0.25326565, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 54e0135ece2fd134e978155524be228c,
+  m_LightingDataAsset: {fileID: 112000000, guid: 190fd443dabde124ab5f2498e4ebe774,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 9ca008a4f51c62f40bf818054d096149,
     type: 2}
@@ -32090,6 +32090,7 @@ MonoBehaviour:
   onDataChange:
     m_PersistentCalls:
       m_Calls: []
+  breakJoints: 0
 --- !u!114 &1507285960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32680,6 +32681,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1460159291}
     m_Modifications:
+    - target: {fileID: -8700617353114198275, guid: 306aa54063b9a7445b9ae055fd0de59a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 306aa54063b9a7445b9ae055fd0de59a,
         type: 3}
       propertyPath: m_RootOrder
@@ -32754,6 +32760,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 306aa54063b9a7445b9ae055fd0de59a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6722085885383957590, guid: 306aa54063b9a7445b9ae055fd0de59a,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4017538329432051458, guid: 306aa54063b9a7445b9ae055fd0de59a,
         type: 3}

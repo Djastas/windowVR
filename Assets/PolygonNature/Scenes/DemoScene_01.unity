@@ -12412,7 +12412,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1909095731}
-  m_RootOrder: 716
+  m_RootOrder: 699
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &455048546
 PrefabInstance:
@@ -28331,7 +28331,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c4db32239f21f994fb221f3b175755c9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -54929,6 +54929,7 @@ Transform:
   - {fileID: 541875360}
   - {fileID: 2108290567}
   - {fileID: 1168738659}
+  - {fileID: 452907902}
   - {fileID: 101770839}
   - {fileID: 1972704690}
   - {fileID: 499433375}
@@ -54946,7 +54947,6 @@ Transform:
   - {fileID: 6130157}
   - {fileID: 9172079}
   - {fileID: 1266791536}
-  - {fileID: 452907902}
   - {fileID: 289385654}
   - {fileID: 2131753769}
   - {fileID: 1505906794}

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using _main.scripts.managers;
+using UnityEngine;
 
 namespace _main.scripts.ConnectSystem
 {
@@ -26,6 +28,7 @@ namespace _main.scripts.ConnectSystem
         {
             // Create a new FixedJoint and set its properties
             FixedJoint joint = detail.gameObject.AddComponent<FixedJoint>();
+            joint.breakForce = SessionManager.Instance.breakJoints ? 1000 : float.PositiveInfinity;
             joint.connectedBody = targetObject.GetComponent<Rigidbody>();
             joint.anchor = Vector3.zero;
             joint.axis = Vector3.forward;
