@@ -8,7 +8,7 @@ namespace _main.scripts.MapSystem
         [SerializeField] private GameObject prefab;
         public string idIngredient;
         
-        public string TestCook; // for test
+        public string tmpCook; // for test
         
         public void Cook(string cookType)
         {
@@ -22,7 +22,7 @@ namespace _main.scripts.MapSystem
             }
             if (nodeData == null)
             {
-                Debug.LogError($"cant find node in out '{cookType}' in node '{idIngredient}' in '{map.name}'",this);
+                Debug.LogWarning($"cant find node in out '{cookType}' in node '{idIngredient}' in '{map.name}'",this);
                 return;
             }
             
@@ -38,9 +38,9 @@ namespace _main.scripts.MapSystem
             // player.transform.position = 
         }
         [ContextMenu("TestCook")]
-        private void Test()
+        public void TmpCook()
         {
-            Cook(TestCook);
+            Cook(tmpCook);
         }
     }
 }
