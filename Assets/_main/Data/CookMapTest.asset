@@ -13,27 +13,57 @@ MonoBehaviour:
   m_Name: CookMapTest
   m_EditorClassIdentifier: 
   nodes:
+  - sceneData: {fileID: 11400000, guid: 10adbeb0b8f5ec346b91fedcf45c2e74, type: 2}
+    portIds:
+    - "\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u043D\u0430\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    - nothing
+    id: "\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u0440\u0430\u0437\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    position: {x: 153, y: 257}
+    nextDataIds:
+    - "cut%\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u043D\u0430\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    - Boil%nothing
+  - sceneData: {fileID: 11400000, guid: 5a232f8ff05e6f0458fc660bfca6be87, type: 2}
+    portIds:
+    - nothing
+    - nothing
+    id: "\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u043D\u0430\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    position: {x: 397, y: 320}
+    nextDataIds:
+    - cut%nothing
+    - Boil%nothing
   - sceneData: {fileID: 11400000, guid: c8f719d101f60ca4796c9e3ce60c0e22, type: 2}
     portIds:
-    - 7a3afaf7-abc0-4bb0-93db-28f33a591970
+    - fryCube
+    - boilCube
     id: cube
-    position: {x: 23, y: 7}
+    position: {x: 134, y: 495}
     nextDataIds:
     - Fry%fryCube
     - Boil%boilCube
   - sceneData: {fileID: 11400000, guid: 8ba15e6f54e91af4492cb66ce8206f56, type: 2}
     portIds:
-    - 3f83920c-547e-44dd-8cc0-f50884628318
+    - nothing
+    - nothing
     id: fryCube
-    position: {x: 233, y: -76}
+    position: {x: 344, y: 412}
     nextDataIds:
     - Fry%nothing
     - Boil%nothing
   - sceneData: {fileID: 11400000, guid: 8cdbeff1d03edfb4fa39b56b89ef4c83, type: 2}
     portIds:
-    - d47bd911-f7b4-4cfd-ba2f-455bcebd081e
+    - nothing
+    - nothing
     id: boilCube
-    position: {x: 228, y: 107}
+    position: {x: 339, y: 595}
     nextDataIds:
     - Fry%nothing
     - Boil%nothing
+  - sceneData: {fileID: 11400000, guid: 50aae388eea02f44cb95009efd502d02, type: 2}
+    portIds:
+    - "\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u0440\u0430\u0437\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    - cube
+    id: "\u043F\u043E\u043C\u0438\u0434\u043E\u0440"
+    position: {x: -50, y: 287}
+    nextDataIds:
+    - "cut%\u043F\u043E\u043C\u0438\u0434\u043E\u0440 \u0440\u0430\u0437\u0440\u0435\u0437\u0430\u043D\u044B\u0439"
+    - Boil%cube
