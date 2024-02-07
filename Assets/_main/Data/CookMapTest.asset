@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad59053fd7f498eb28ae7217610d3b7, type: 3}
+  m_Name: CookMapTest
+  m_EditorClassIdentifier: 
+  nodes:
+  - sceneData: {fileID: 11400000, guid: c8f719d101f60ca4796c9e3ce60c0e22, type: 2}
+    portIds:
+    - 7a3afaf7-abc0-4bb0-93db-28f33a591970
+    id: cube
+    position: {x: 23, y: 7}
+    nextDataIds:
+    - Fry%fryCube
+    - Boil%boilCube
+  - sceneData: {fileID: 11400000, guid: 8ba15e6f54e91af4492cb66ce8206f56, type: 2}
+    portIds:
+    - 3f83920c-547e-44dd-8cc0-f50884628318
+    id: fryCube
+    position: {x: 233, y: -76}
+    nextDataIds:
+    - Fry%nothing
+    - Boil%nothing
+  - sceneData: {fileID: 11400000, guid: 8cdbeff1d03edfb4fa39b56b89ef4c83, type: 2}
+    portIds:
+    - d47bd911-f7b4-4cfd-ba2f-455bcebd081e
+    id: boilCube
+    position: {x: 228, y: 107}
+    nextDataIds:
+    - Fry%nothing
+    - Boil%nothing

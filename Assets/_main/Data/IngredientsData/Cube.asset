@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246287d4be89418f99a7efd0d572f3ef, type: 3}
+  m_Name: Cube
+  m_EditorClassIdentifier: 
+  sceneName: cube
+  inObjId:
+  - 1
+  outObjId:
+  - Fry
+  - Boil
+  prefab: {fileID: 5065915578723398971, guid: 840749848d0a4ad489a3c74652671abc, type: 3}
