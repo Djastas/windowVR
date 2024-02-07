@@ -29,7 +29,7 @@ namespace components.colliders
         private void OnCollisionExit(Collision col)
         {
             if (isTrigger) return;
-            if(!CheckObject(col.collider)) return;
+            if(!CheckObject(col.collider, true)) return;
             exitEvent.Invoke(col.collider);
         }
 
@@ -44,7 +44,7 @@ namespace components.colliders
         {
             if (!isTrigger) return;
             if(!CheckObject(col)) return;
-            enterEvent?.Invoke(col);
+            stayEvent?.Invoke(col);
         }
 
         void OnTriggerEnter(Collider col)
@@ -57,16 +57,24 @@ namespace components.colliders
         void OnTriggerExit(Collider col)
         {
             if (!isTrigger) return;
-            if(!CheckObject(col)) return;
+            if(!CheckObject(col , true)) return;
             exitEvent.Invoke(col);
         }
     
-        public bool CheckObject(Collider col)
+        public bool CheckObject(Collider col , bool isExit = false)
         {
             if (col == null) return false;
             if (!(col.CompareTag(checkTag) || checkTag == "")) return false;
             if (oneOnObject)
             {
+                if (isExit)
+                {
+                    var find = _useGameObjects.Find(t => t = col.gameObject);
+                    if (find != null)
+                    {
+                        _useGameObjects.Remove(find);
+                    }
+                }
                 if (_useGameObjects.Contains(col.gameObject))
                 {
                     return false;
