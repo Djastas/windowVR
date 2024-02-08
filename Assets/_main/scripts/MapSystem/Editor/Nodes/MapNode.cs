@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -18,6 +19,7 @@ namespace _main.scripts.MapSystem.Nodes
         public Port Action;
 
         public List<string> PortsIds;
+        public TextField TextField;
 
 
         protected Port MakePort(Direction direction, Port.Capacity capacity = Port.Capacity.Single)
@@ -50,6 +52,7 @@ namespace _main.scripts.MapSystem.Nodes
             this.titleContainer.style.backgroundColor = new StyleColor(color); // name
             
             Inputs = new List<Port>();
+            
             for (var index = 0; index < inPorts.Count; index++)
             {
                 var inPort = inPorts[index];
@@ -60,34 +63,59 @@ namespace _main.scripts.MapSystem.Nodes
                 Inputs.Add(Input);
             }
 
-            Outputs = new List<Port>();
-            foreach (var outPort in outPorts)
+            if (outPorts.Count != 0)
             {
-                var Output = this.MakePort(Direction.Output, Port.Capacity.Multi);
-                Output.portName = outPort;
-                this.inputContainer.Add(Output); // input port
-                Outputs.Add(Output);
+                Outputs = new List<Port>();
+                foreach (var outPort in outPorts)
+                {
+                    var Output = this.MakePort(Direction.Output, Port.Capacity.Multi);
+                    Output.portName = outPort;
+                    this.inputContainer.Add(Output); // input port
+                    Outputs.Add(Output);
+                }
+               
+            }
+            else
+            {
+                var textField = new TextField();
+                this.mainContainer.Add(textField);
+                TextField = textField;
+                
+                color = new Color(0.13f, 0.11f, 0.25f);
+                this.titleContainer.style.backgroundColor = new StyleColor(new Color(0.09f, 0.05f, 0.25f)); // name
             }
 
+          
 
+            this.mainContainer.style.backgroundColor = new StyleColor(color); // set color
             // Action = this.MakePort<string>(Direction.Output);
             // Action.portName = "Action";
             // this.outputContainer.Add(Action); // output port with type
             
-            this.mainContainer.style.backgroundColor = new StyleColor(color); // set color
+            
 
             this.RefreshExpandedState();
             this.RefreshPorts();
             
         } // create node
+       
+        
+        
+        
         public NodeData Save()
         {
+            
             var topic = new NodeData
             {
                 id = this.Id,
                 position = this.GetPosition().position,
                 sceneData = sceneInOutData
             };
+            if (TextField != null)
+            {
+                topic.eventText = TextField.value;
+            }
+
             Debug.Log("start save");
 
 
@@ -99,6 +127,10 @@ namespace _main.scripts.MapSystem.Nodes
         public Dictionary<string ,string> GetOutputs()
         {
             var returnValue = new Dictionary<string ,string>();
+            if (Outputs == null)
+            {
+                return returnValue;
+            }
             foreach (var Output in Outputs)
             {
                 var list = "nothing";

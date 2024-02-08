@@ -36,6 +36,7 @@ namespace _main.scripts.MapSystem
         public string id;
         public Vector2 position;
         public List<string> nextDataIds;
+        public string eventText;
     }
    
 }

@@ -46,14 +46,22 @@ namespace _main.scripts.MapSystem
             };
             toolbar.Add(sceneDataField);
             
+            
+            
             var addAnswerButton = new Button(() => _graphView.AddNode((SceneInOutData)sceneDataField.value));
             addAnswerButton.text = "Add Answer";
             toolbar.Add(addAnswerButton);
+            
+            var addEventButton = new Button(() => _graphView.AddEventNode());
+            addEventButton.text = "Add eventNode";
+            toolbar.Add(addEventButton);
             
             
             var initButton = new Button(() => _graphView.Save(_targetObject));
             initButton.text = "Save";
             toolbar.Add(initButton);
+            
+            
 
             rootVisualElement.Add(toolbar);
         }

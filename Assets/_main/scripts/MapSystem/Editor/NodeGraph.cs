@@ -33,7 +33,14 @@ namespace _main.scripts.MapSystem
             foreach (var mapNode in mapData.nodes) // get one node
             {
                 var inputNodeList = DictionaryUtils.Split(mapNode.nextDataIds); // get dictionary< outputId , inputId>
-                var node = new MapNode(this, mapNode.position, mapNode.sceneData , inputNodeList.Values.ToList()); // create node
+                MapNode node;
+                node = mapNode.sceneData == null
+                    ? AddEventNode(mapNode.position)
+                    : new MapNode(this,
+                        mapNode.position,
+                        mapNode.sceneData,
+                        inputNodeList.Values.ToList());
+               
                 allNode.Add(node);
 
 
@@ -87,6 +94,21 @@ namespace _main.scripts.MapSystem
            
             this.AddElement(new MapNode(this, NodeSpawnpoint(), sceneData,idsList));
         } // create new node methode 
+        public MapNode AddEventNode(Vector2 position )
+        {
+            var idsList = new List<string>();
+            idsList.Add("in");
+
+            var mapNode = new MapNode(this, position,"Event",idsList,idsList,new List<string>());
+            this.AddElement(mapNode);
+            return mapNode;
+        } // create new node methode 
+
+        public MapNode AddEventNode()
+        {
+            return AddEventNode(NodeSpawnpoint());
+        }
+
         private Vector2 NodeSpawnpoint()
             => -(Vector2)this.viewTransform.position + new Vector2(30, 30); // pos to spawn node
         public void Save(MapData dialog)
