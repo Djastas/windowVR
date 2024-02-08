@@ -55,9 +55,7 @@ namespace _main.scripts
             if (ingredientTime.Timer.currentTime < cookTime)
             {
                 ingredientTime.Ingredient.Cook(cookType);
-                Debug.Log("fdghdgdf");
             }
-            
             
             Destroy(ingredientTime.Timer);
             IngredientsTimes.Remove(ingredientTime);
