@@ -6,7 +6,7 @@ namespace _main.scripts
 {
     public class CookStationMonitorController : MonoBehaviour
     {
-        [SerializeField] private CookStationController cookStation;
+        [SerializeField] private StationController cookStation;
         [SerializeField] private TMP_Text text;
 
         private void Start()
@@ -17,7 +17,7 @@ namespace _main.scripts
 
         private void UpdateMonitor()
         {
-            var updateData = UpdateData();
+            var updateData = cookStation.GetIngredients();
             var tmp = "";
             foreach (var (vName,vCount) in updateData)
             {
@@ -26,22 +26,6 @@ namespace _main.scripts
             text.text = tmp;
         }
 
-        private Dictionary<string, int> UpdateData() // get counted data
-        {
-            var updateData = new Dictionary<string, int>();
-            foreach (var cookStationIngredient in cookStation.IngredientsTimes)
-            {
-                if (updateData.ContainsKey(cookStationIngredient.Ingredient.idIngredient))
-                {
-                    updateData[cookStationIngredient.Ingredient.idIngredient] += 1;
-                }
-                else
-                {
-                    updateData.Add(cookStationIngredient.Ingredient.idIngredient, 1);
-                }
-            }
-
-            return updateData;
-        }
+       
     }
 }

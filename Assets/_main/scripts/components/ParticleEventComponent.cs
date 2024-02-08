@@ -32,7 +32,6 @@ namespace Pixelcrew.component
             {
                 Vector3 pos = collisionEvents[i].intersection;
                 
-
                 
                 actionGo.Invoke(other);
                 actionPos.Invoke(pos);

@@ -15,6 +15,7 @@ namespace _main.scripts.MapSystem
             return tmp;
         }
         
+
         public static Dictionary<string ,string> Split( List<string> input)
         {
             var tmp = new Dictionary<string ,string>();
@@ -25,5 +26,18 @@ namespace _main.scripts.MapSystem
             }
             return tmp;
         }
+
+        public static Dictionary<string, string> DictionaryToStringDictionary<T,I>(Dictionary<T, I> input)
+        {
+            var newDictionary = new Dictionary<string, string>();
+            foreach (var (key, value) in input)
+            {
+                newDictionary.Add(key.ToString(),value.ToString());
+            }
+
+            return newDictionary;
+        }
+        
+        
     }
 }
