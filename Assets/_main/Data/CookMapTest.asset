@@ -25,12 +25,12 @@ MonoBehaviour:
     eventText: 
   - sceneData: {fileID: 11400000, guid: 8ba15e6f54e91af4492cb66ce8206f56, type: 2}
     portIds:
-    - Event
+    - Fry
     - nothing
     id: fryCube
     position: {x: 28, y: 92}
     nextDataIds:
-    - Fry%Event
+    - Fry%Fry
     - Boil%nothing
     eventText: 
   - sceneData: {fileID: 11400000, guid: 8cdbeff1d03edfb4fa39b56b89ef4c83, type: 2}
@@ -41,12 +41,19 @@ MonoBehaviour:
     position: {x: 23, y: 263}
     nextDataIds:
     - Fry%nothing
-    - Boil%nothing
+    - Boil%Boil
     eventText: 
   - sceneData: {fileID: 0}
     portIds:
-    - in
-    id: Event
+    - Fry
+    id: Fry
     position: {x: 194, y: 124}
     nextDataIds: []
-    eventText: 
+    eventText: Fry
+  - sceneData: {fileID: 0}
+    portIds:
+    - Boil
+    id: Boil
+    position: {x: 192, y: 304}
+    nextDataIds: []
+    eventText: Boil

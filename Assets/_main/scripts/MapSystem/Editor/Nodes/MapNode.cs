@@ -78,6 +78,7 @@ namespace _main.scripts.MapSystem.Nodes
             else
             {
                 var textField = new TextField();
+                textField.value = id;
                 this.mainContainer.Add(textField);
                 TextField = textField;
                 

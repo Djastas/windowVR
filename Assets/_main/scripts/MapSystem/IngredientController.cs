@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,9 +12,13 @@ namespace _main.scripts.MapSystem
         public string idIngredient;
         
         public string tmpCook; // for test
-        [SerializeField] private UnityEvent<string> failEvent;
+        [SerializeField] private UnityEvent<string> @event;
 
-        
+        private void Start()
+        {
+            @event.AddListener( EventSeparator.Instance.InvokeEvent);
+        }
+
         public void Cook(string cookType)
         {
             var node = map.nodes.Find(t => t.id == idIngredient); // find ingredient on map
@@ -34,7 +39,7 @@ namespace _main.scripts.MapSystem
             
             if (nodeData.id == "Event")
             {
-                failEvent?.Invoke(nodeData.eventText);
+                @event?.Invoke(nodeData.eventText);
             }
             
             Debug.Log($"{cookType} {idIngredient} to {nodeData.id}");

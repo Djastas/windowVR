@@ -1,29 +1,35 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector.Editor;
+using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace _main.scripts.MapSystem
 {
-    public class MapEditorWindows : EditorWindow
+    public class MapEditorWindows : OdinEditorWindow
     {
         private MapData _targetObject; // now edit data 
         private NodeGraph _graphView; // created graph 
-        private SceneInOutData _currentSceneInOutData;
-        
+        private List<SceneInOutData> _currentSceneInOutData;
+        private ObjectField sceneDataField;
+
+        public List<SceneInOutData> data;
+
         public void Init(MapData targetObject)
         {
             var wnd = GetWindow<MapEditorWindows>();
-            wnd.titleContent = new GUIContent(targetObject.name); // set tittle to data name
+            // wnd.titleContent = new GUIContent(targetObject.name); // set tittle to data name
             
             _targetObject = targetObject;
             _graphView.Load(_targetObject); // init graph/load graph
         }
-        
-        private void OnEnable()
+
+        protected override void OnEnable()
         {
             MakeGraphView();
             MakeToolbar();
+            base.OnEnable();
         }
         private void MakeGraphView()
         {
@@ -40,19 +46,21 @@ namespace _main.scripts.MapSystem
 
             var toolbar = new Toolbar();
 
-            var sceneDataField = new ObjectField
+             sceneDataField = new ObjectField
             {
                 objectType = typeof(SceneInOutData)
             };
             toolbar.Add(sceneDataField);
+
+            var textField = new TextField();
+            toolbar.Add(textField);
             
-            
-            
-            var addAnswerButton = new Button(() => _graphView.AddNode((SceneInOutData)sceneDataField.value));
+            var addAnswerButton = new Button(() => _graphView.AddNode((SceneInOutData) sceneDataField.value));
             addAnswerButton.text = "Add Answer";
             toolbar.Add(addAnswerButton);
             
-            var addEventButton = new Button(() => _graphView.AddEventNode());
+            
+            var addEventButton = new Button(() => _graphView.AddEventNode(textField.value));
             addEventButton.text = "Add eventNode";
             toolbar.Add(addEventButton);
             
@@ -65,6 +73,8 @@ namespace _main.scripts.MapSystem
 
             rootVisualElement.Add(toolbar);
         }
+
+      
         
     }
 }

@@ -35,7 +35,7 @@ namespace _main.scripts.MapSystem
                 var inputNodeList = DictionaryUtils.Split(mapNode.nextDataIds); // get dictionary< outputId , inputId>
                 MapNode node;
                 node = mapNode.sceneData == null
-                    ? AddEventNode(mapNode.position)
+                    ? AddEventNode(mapNode.position,mapNode.eventText,mapNode.eventText)
                     : new MapNode(this,
                         mapNode.position,
                         mapNode.sceneData,
@@ -94,19 +94,23 @@ namespace _main.scripts.MapSystem
            
             this.AddElement(new MapNode(this, NodeSpawnpoint(), sceneData,idsList));
         } // create new node methode 
-        public MapNode AddEventNode(Vector2 position )
+        public MapNode AddEventNode(Vector2 position,string text,string name  )
         {
             var idsList = new List<string>();
-            idsList.Add("in");
+            idsList.Add(name);
+            idsList.Add(name);
+            idsList.Add(name);
+            idsList.Add(name);
+            idsList.Add(name);
 
-            var mapNode = new MapNode(this, position,"Event",idsList,idsList,new List<string>());
+            var mapNode = new MapNode(this, position,name,idsList,idsList,new List<string>());
             this.AddElement(mapNode);
             return mapNode;
         } // create new node methode 
 
-        public MapNode AddEventNode()
+        public MapNode AddEventNode(string name)
         {
-            return AddEventNode(NodeSpawnpoint());
+            return AddEventNode(NodeSpawnpoint(),"event",name);
         }
 
         private Vector2 NodeSpawnpoint()
