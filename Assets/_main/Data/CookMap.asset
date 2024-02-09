@@ -13,30 +13,12 @@ MonoBehaviour:
   m_Name: CookMap
   m_EditorClassIdentifier: 
   nodes:
-  - sceneData: {fileID: 0}
-    portIds:
-    - event
-    id: Event
-    position: {x: 621, y: 547}
-    nextDataIds: []
-    eventText: mockery1
-  - sceneData: {fileID: 0}
-    portIds:
-    - event
-    id: Event
-    position: {x: 700, y: 547}
-    nextDataIds: []
-    eventText: mockery1
-  - sceneData: {fileID: 0}
-    portIds:
-    - event
-    id: Event
-    position: {x: 779, y: 547}
-    nextDataIds: []
-    eventText: mockery1
   - sceneData: {fileID: 11400000, guid: 5fbeaee0e3bc9e94b96f39cc8075a418, type: 2}
     portIds:
-    - a721cabd-bd0e-4073-b2be-89d54885ae60
+    - nothing
+    - nothing
+    - nothing
+    - nothing
     id: "\u043A\u0430\u0440\u0442\u043E\u0448\u043A\u0430"
     position: {x: 621, y: 644}
     nextDataIds:
@@ -45,148 +27,231 @@ MonoBehaviour:
     - burn%nothing
     - wash%nothing
     eventText: 
-  - sceneData: {fileID: 11400000, guid: 932c9c8f2b7a70e41b47a2482268535b, type: 2}
-    portIds: []
-    id: "\u043A\u0430\u0440\u0442\u043E\u0448\u043A\u0430 \u0432 \u043A\u043E\u0436\u0443\u0440\u0435"
-    position: {x: 445, y: 631}
-    nextDataIds:
-    - boil%Event
-    - fry%Event
-    - "wash%\u043A\u0430\u0440\u0442\u043E\u0448\u043A\u0430"
-    - cut%Event
-    eventText: 
-  - sceneData: {fileID: 11400000, guid: 78f25f51e58bd0144bfdd60fdb52a4bc, type: 2}
-    portIds: []
-    id: "\u043E\u0433\u0443\u0440\u0435\u0446"
-    position: {x: 466, y: 851}
-    nextDataIds:
-    - boil%nothing
-    - "cut%\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043E\u0433\u0443\u0440\u0446\u0430"
-    - wash%nothing
-    eventText: 
-  - sceneData: {fileID: 11400000, guid: 429c74935a1c92b46b37517c35f21be7, type: 2}
+  - sceneData: {fileID: 11400000, guid: 7602f82808f410043a89d85e7c062d6e, type: 2}
     portIds:
-    - b44613b5-7438-4abf-8d88-1a510c1f46be
-    id: "\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043E\u0433\u0443\u0440\u0446\u0430"
-    position: {x: 607, y: 851}
+    - nothing
+    - nothing
+    id: "\u0433\u043E\u0440\u043E\u0445"
+    position: {x: 374, y: 446}
     nextDataIds:
-    - boil%nothing
-    - "cut%\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044C \u043E\u0433\u0443\u0440\u0446\u0430"
+    - Wash%wash
+    - salat%nothing
     eventText: 
-  - sceneData: {fileID: 11400000, guid: 4d959bc7a4bab1d48a6776d0580d2923, type: 2}
-    portIds: []
-    id: "\u043B\u0443\u043A"
-    position: {x: 607, y: 435}
-    nextDataIds:
-    - boil%nothing
-    - cut%nothing
-    eventText: 
+  - sceneData: {fileID: 0}
+    portIds:
+    - wash
+    - wash
+    - wash
+    - wash
+    - wash
+    id: wash
+    position: {x: 487, y: 398}
+    nextDataIds: []
+    eventText: wash
   - sceneData: {fileID: 11400000, guid: 394519733c5b03a47b2055bf054dc2c0, type: 2}
-    portIds: []
+    portIds:
+    - nothing
+    - nothing
+    - nothing
     id: "\u043C\u043E\u0440\u043A\u043E\u0432\u044C"
     position: {x: 691, y: 411}
     nextDataIds:
     - boil%nothing
-    - wash%nothing
-    - cut%Event
+    - "wash%\u0447\u0438\u0441\u0442\u0430\u044F \u043C\u043E\u0440\u043A\u043E\u0432\u044C"
+    - cut%nothing
     eventText: 
-  - sceneData: {fileID: 0}
+  - sceneData: {fileID: 11400000, guid: 3b7ccf53f53561549990cb896e42b8d4, type: 2}
     portIds:
-    - event
-    id: Event
-    position: {x: 801, y: 426}
-    nextDataIds: []
-    eventText: mockery2
-  - sceneData: {fileID: 11400000, guid: 448d4d2444ec9754b8a5f28f5817266e, type: 2}
-    portIds: []
-    id: "\u043F\u043E\u043C\u0438\u0434\u043E\u0440"
-    position: {x: 466, y: 998}
+    - nothing
+    - nothing
+    id: "\u0441\u0432\u0435\u043A\u043B\u0430"
+    position: {x: 682, y: 270}
+    nextDataIds:
+    - boil%nothing
+    - "wash%\u0447\u0438\u0441\u0442\u0430\u044F \u0441\u0432\u0435\u043A\u043B\u0430"
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 3caa0ab9e9c6d9845be8dea4ca863fd4, type: 2}
+    portIds:
+    - 3cfecf46-55b7-4ac8-b00e-de838afda0aa
+    id: "\u0447\u0438\u0441\u0442\u0430\u044F \u043C\u043E\u0440\u043A\u043E\u0432\u044C"
+    position: {x: 826, y: 411}
+    nextDataIds:
+    - boil%nothing
+    - wash%nothing
+    - cut%nothing
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 6d0bc09ffc55bda4b812d030d90f78c0, type: 2}
+    portIds:
+    - 79bef5f1-6c99-4528-bb0f-7db3fcf2b52b
+    id: "\u0447\u0438\u0441\u0442\u0430\u044F \u0441\u0432\u0435\u043A\u043B\u0430"
+    position: {x: 801, y: 249}
+    nextDataIds:
+    - boil%nothing
+    - wash%nothing
+    - cut%nothing
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 9e3342af6acb74540a64a4aef6558ea8, type: 2}
+    portIds:
+    - 7af7c704-8e45-4b9b-819c-c018b1602505
+    id: "\u0447\u0438\u0441\u0442\u044B\u0439 \u043F\u043E\u043C\u0438\u0434\u043E\u0440"
+    position: {x: 430, y: 945}
     nextDataIds:
     - boil%nothing
     - wash%nothing
     - "cut%\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430"
+    - '%nothing'
+    eventText: 
+  - sceneData: {fileID: 0}
+    portIds:
+    - looser
+    - looser
+    - looser
+    - looser
+    - looser
+    id: looser
+    position: {x: 1111, y: 1305}
+    nextDataIds: []
+    eventText: looser
+  - sceneData: {fileID: 11400000, guid: c939fd9468a42d14ca4a7817a4050bd1, type: 2}
+    portIds:
+    - "\u044F\u0439\u0446\u043E \u0431\u0438\u0442\u043E\u0435"
+    - nothing
+    id: "\u044F\u0439\u0446\u043E"
+    position: {x: 827, y: 1358}
+    nextDataIds:
+    - "boil%\u044F\u0439\u0446\u043E \u0431\u0438\u0442\u043E\u0435"
+    - smash%nothing
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 304d07dd596f3d44187a765d837ce5c3, type: 2}
+    portIds:
+    - nothing
+    id: "\u044F\u0439\u0446\u043E \u0431\u0438\u0442\u043E\u0435"
+    position: {x: 955, y: 1358}
+    nextDataIds:
+    - 1%nothing
+    eventText: 
+  - sceneData: {fileID: 0}
+    portIds:
+    - mockery1
+    - mockery1
+    - mockery1
+    - mockery1
+    - mockery1
+    id: mockery1
+    position: {x: 395, y: 1123}
+    nextDataIds: []
+    eventText: mockery1
+  - sceneData: {fileID: 11400000, guid: 448d4d2444ec9754b8a5f28f5817266e, type: 2}
+    portIds:
+    - nothing
+    - nothing
+    - nothing
+    - nothing
+    id: "\u043F\u043E\u043C\u0438\u0434\u043E\u0440"
+    position: {x: 275, y: 912}
+    nextDataIds:
+    - boil%nothing
+    - "wash%\u0447\u0438\u0441\u0442\u044B\u0439 \u043F\u043E\u043C\u0438\u0434\u043E\u0440"
+    - cut%mockery1
+    - '%nothing'
     eventText: 
   - sceneData: {fileID: 11400000, guid: c80eeaad0a67c86489e984bbc17dc5d0, type: 2}
     portIds:
-    - 1f2e0c51-9d30-4a7d-8ee2-183d965037d0
+    - nothing
+    - nothing
     id: "\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430"
     position: {x: 607, y: 998}
     nextDataIds:
     - boil%nothing
     - "cut%\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0438\u043D\u043A\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430"
     eventText: 
-  - sceneData: {fileID: 11400000, guid: 23bbc0673a1deb64bb1b18cefbbbb5f8, type: 2}
-    portIds:
-    - 25da3b83-4228-432a-abfc-9dbca3a6209d
-    id: "\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0438\u043D\u043A\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430"
-    position: {x: 801, y: 998}
-    nextDataIds:
-    - boil%nothing
-    - salat%nothing
-    - '%nothing'
-    eventText: 
   - sceneData: {fileID: 11400000, guid: dd1a4ce6f3fcfd343949d487b5b3f2b2, type: 2}
     portIds:
-    - 6923d66e-e471-4228-9e45-c6321cb9e952
+    - nothing
+    - nothing
     id: "\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044C \u043E\u0433\u0443\u0440\u0446\u0430"
-    position: {x: 822, y: 851}
+    position: {x: 1451, y: 821}
     nextDataIds:
     - boil%nothing
     - "cut%\u043A\u0443\u0447\u043A\u0430 \u043E\u0433\u0443\u0440\u0446\u043E\u0432"
     eventText: 
   - sceneData: {fileID: 11400000, guid: 5a7cac0507fa838498aab69a09c2b2ed, type: 2}
     portIds:
-    - 8ec4ef7e-d0b4-48ac-a0c1-278603e7b06c
+    - nothing
+    - nothing
+    - nothing
     id: "\u043A\u0443\u0447\u043A\u0430 \u043E\u0433\u0443\u0440\u0446\u043E\u0432"
-    position: {x: 1020, y: 827}
+    position: {x: 1649, y: 797}
     nextDataIds:
     - boil%nothing
     - cut%nothing
     - salat%nothing
     eventText: 
-  - sceneData: {fileID: 11400000, guid: 3b7ccf53f53561549990cb896e42b8d4, type: 2}
-    portIds: []
-    id: "\u0441\u0432\u0435\u043A\u043B\u0430"
-    position: {x: 908, y: 415}
+  - sceneData: {fileID: 11400000, guid: 429c74935a1c92b46b37517c35f21be7, type: 2}
+    portIds:
+    - nothing
+    - nothing
+    id: "\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043E\u0433\u0443\u0440\u0446\u0430"
+    position: {x: 1236, y: 821}
     nextDataIds:
     - boil%nothing
+    - "cut%\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044C \u043E\u0433\u0443\u0440\u0446\u0430"
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 641eaa43ec3fabe40971320cc71e8182, type: 2}
+    portIds:
+    - aeadd935-5f4e-4455-ad3d-c4b2e2c56b2a
+    id: "\u0447\u0438\u0441\u0442\u044B\u0439 \u043E\u0433\u0443\u0440\u0435\u0446"
+    position: {x: 1080, y: 797}
+    nextDataIds:
+    - boil%nothing
+    - "cut%\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u043E\u0433\u0443\u0440\u0446\u0430"
     - wash%nothing
     eventText: 
-  - sceneData: {fileID: 11400000, guid: c939fd9468a42d14ca4a7817a4050bd1, type: 2}
-    portIds: []
-    id: "\u044F\u0439\u0446\u043E"
-    position: {x: 479, y: 1147}
+  - sceneData: {fileID: 11400000, guid: 78f25f51e58bd0144bfdd60fdb52a4bc, type: 2}
+    portIds:
+    - nothing
+    - nothing
+    - nothing
+    id: "\u043E\u0433\u0443\u0440\u0435\u0446"
+    position: {x: 967, y: 797}
     nextDataIds:
     - boil%nothing
-    - "smash%\u044F\u0439\u0446\u043E \u0431\u0438\u0442\u043E\u0435"
+    - cut%nothing
+    - "wash%\u0447\u0438\u0441\u0442\u044B\u0439 \u043E\u0433\u0443\u0440\u0435\u0446"
     eventText: 
-  - sceneData: {fileID: 11400000, guid: 304d07dd596f3d44187a765d837ce5c3, type: 2}
+  - sceneData: {fileID: 11400000, guid: 4d959bc7a4bab1d48a6776d0580d2923, type: 2}
     portIds:
-    - 446c8cab-3613-4a2b-a494-b6c921fa4e3c
-    id: "\u044F\u0439\u0446\u043E \u0431\u0438\u0442\u043E\u0435"
-    position: {x: 607, y: 1147}
+    - nothing
+    - nothing
+    id: "\u043B\u0443\u043A"
+    position: {x: 702, y: 543}
     nextDataIds:
-    - 1%Event
+    - boil%nothing
+    - cut%nothing
     eventText: 
-  - sceneData: {fileID: 0}
+  - sceneData: {fileID: 11400000, guid: 932c9c8f2b7a70e41b47a2482268535b, type: 2}
     portIds:
-    - event
-    id: Event
-    position: {x: 743, y: 1151}
-    nextDataIds: []
-    eventText: looser
-  - sceneData: {fileID: 11400000, guid: 7602f82808f410043a89d85e7c062d6e, type: 2}
-    portIds: []
-    id: "\u0433\u043E\u0440\u043E\u0445"
-    position: {x: 374, y: 446}
+    - nothing
+    - nothing
+    - nothing
+    - nothing
+    id: "\u043A\u0430\u0440\u0442\u043E\u0448\u043A\u0430 \u0432 \u043A\u043E\u0436\u0443\u0440\u0435"
+    position: {x: 401, y: 644}
     nextDataIds:
-    - Wash%Event
+    - boil%nothing
+    - fry%nothing
+    - "wash%\u043A\u0430\u0440\u0442\u043E\u0448\u043A\u0430"
+    - cut%nothing
+    eventText: 
+  - sceneData: {fileID: 11400000, guid: 23bbc0673a1deb64bb1b18cefbbbb5f8, type: 2}
+    portIds:
+    - nothing
+    - nothing
+    - nothing
+    id: "\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0438\u043D\u043A\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430"
+    position: {x: 827, y: 1021}
+    nextDataIds:
+    - boil%nothing
     - salat%nothing
+    - '%nothing'
     eventText: 
-  - sceneData: {fileID: 0}
-    portIds:
-    - event
-    id: Event
-    position: {x: 487, y: 398}
-    nextDataIds: []
-    eventText: wash

@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8449337537972582064}
-  m_LocalRotation: {x: -0, y: -0, z: -0.14237301, w: 0.98981315}
+  m_LocalRotation: {x: 0, y: 0, z: -0.14236975, w: 0.98981357}
   m_LocalPosition: {x: 4.469, y: 0.214, z: -4.699}
   m_LocalScale: {x: 1000, y: 1000, z: 1000}
   m_ConstrainProportionsScale: 1
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f013c3e485e744589515ab7f2b252912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: e9c08e2fca05f9d449f49f54c679e1a5, type: 2}
+  map: {fileID: 11400000, guid: a6bb0cb6cbcf15749801e9e4ab450299, type: 2}
   prefab: {fileID: 8638227708916042658}
   idIngredient: "\u0441\u043E\u043B\u044C"
   tmpCook: 
@@ -300,6 +300,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8999911773206952699, guid: 9f2125e3739d2c54e9edc8ea8e731bdf, type: 3}

@@ -47,6 +47,7 @@ ScriptedImporter:
     flipbookRows: 0
     flipbookColumns: 0
     ignorePngGamma: 0
+    cookieMode: 0
     filterMode: 1
     aniso: 1
     mipBias: 0
@@ -89,6 +90,7 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
   - name: "\u0421\u043B\u043E\u0439 3 \u043A\u043E\u043F\u0438\u044F"
@@ -111,7 +113,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -127, y: 1224}
+    uvTransform: {x: 4, y: 1796}
+    spritePosition: {x: 131, y: 572}
   - name: "\u0421\u043B\u043E\u0439 1"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +135,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -123, y: -560}
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 127, y: 564}
   characterData:
     bones: []
     parts: []
@@ -167,7 +171,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 00000000000000000000000000000000
+    spriteID: 941ae276d2e9bdb4792609a031a680f9
     layerID: 7
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
@@ -177,7 +181,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 00000000000000000000000000000000
+    spriteID: aa1438cc452e82f43b13d67454d44a6b
     layerID: 9
     mosaicPosition: {x: 0, y: 0}
     flatten: 0

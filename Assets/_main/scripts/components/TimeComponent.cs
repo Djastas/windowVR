@@ -10,6 +10,7 @@ namespace _main.scripts.components
         public bool isPlay;
         
         [ReadOnly] public float currentTime;
+        public UnityEvent<float> OnChange;
         
         public UnityEvent onEnd = new();
         private bool _isEnd;
@@ -21,7 +22,7 @@ namespace _main.scripts.components
         private void Update()
         {
             if (!isPlay) { return; }
-            
+            OnChange?.Invoke(currentTime/time);
             if (currentTime <= 0)
             {
                 if (_isEnd) return;
