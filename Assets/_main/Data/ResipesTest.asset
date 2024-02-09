@@ -19,3 +19,8 @@ MonoBehaviour:
     ResultName: "\u0441\u0443\u043F"
     Result: {fileID: 5178137485559613912, guid: 5d346f424e972a54da6b2ebb7b357de0,
       type: 3}
+  - Recipe:
+    - "\u0447\u0435\u0442\u0432\u0435\u0440\u0442\u0438\u043D\u043A\u0430 \u043F\u043E\u043C\u0438\u0434\u043E\u0440\u0430%1"
+    - "\u043A\u0443\u0447\u043A\u0430 \u043E\u0433\u0443\u0440\u0446\u043E\u0432%1"
+    ResultName: "\u0432\u0438\u043D\u0435\u0433\u0440\u0435\u0434"
+    Result: {fileID: 885024229625051425, guid: ef245114f149162409970aaef8bedea6, type: 3}

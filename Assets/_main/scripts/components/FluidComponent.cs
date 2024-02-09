@@ -9,7 +9,7 @@ namespace _main.scripts.components
         [SerializeField] private GameObject particlePrefab;
 
         private bool _isPouring;
-        private GameObject _instance;
+        // private GameObject _instance;
         private void Update()
         {
             bool pourCheck = CalculatePourAngle() < pourThreshold;
@@ -18,21 +18,16 @@ namespace _main.scripts.components
                 _isPouring = pourCheck;
                 if (_isPouring)
                 {
-                    _instance = Instantiate(particlePrefab, origin);
+                    Instantiate(particlePrefab, origin);
                     
                 }
-                else
-                {
-                    Destroy(_instance);
-                }
-               
             }
         }
 
         private float CalculatePourAngle()
         {
             
-            return Vector3.Angle(Vector3.down, transform.up);
+            return Vector3.Angle(Vector3.down, transform.forward);
         }
     }
 }

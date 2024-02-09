@@ -18,4 +18,6 @@ MonoBehaviour:
   outObjId:
   - Fry
   - Boil
+  - wash
+  - cut
   prefab: {fileID: 5065915578723398971, guid: 840749848d0a4ad489a3c74652671abc, type: 3}

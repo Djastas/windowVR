@@ -13,16 +13,6 @@ MonoBehaviour:
   m_Name: CookMapTest
   m_EditorClassIdentifier: 
   nodes:
-  - sceneData: {fileID: 11400000, guid: c8f719d101f60ca4796c9e3ce60c0e22, type: 2}
-    portIds:
-    - fryCube
-    - boilCube
-    id: cube
-    position: {x: -186, y: 124}
-    nextDataIds:
-    - Fry%fryCube
-    - Boil%boilCube
-    eventText: 
   - sceneData: {fileID: 11400000, guid: 8ba15e6f54e91af4492cb66ce8206f56, type: 2}
     portIds:
     - Fry
@@ -33,27 +23,57 @@ MonoBehaviour:
     - Fry%Fry
     - Boil%nothing
     eventText: 
+  - sceneData: {fileID: 0}
+    portIds:
+    - Fry
+    - Fry
+    - Fry
+    - Fry
+    - Fry
+    id: Fry
+    position: {x: 194, y: 124}
+    nextDataIds: []
+    eventText: Fry
   - sceneData: {fileID: 11400000, guid: 8cdbeff1d03edfb4fa39b56b89ef4c83, type: 2}
     portIds:
     - nothing
-    - nothing
+    - Boil
     id: boilCube
-    position: {x: 23, y: 263}
+    position: {x: 28, y: 242}
     nextDataIds:
     - Fry%nothing
     - Boil%Boil
     eventText: 
   - sceneData: {fileID: 0}
     portIds:
-    - Fry
-    id: Fry
-    position: {x: 194, y: 124}
-    nextDataIds: []
-    eventText: Fry
-  - sceneData: {fileID: 0}
-    portIds:
+    - Boil
+    - Boil
+    - Boil
+    - Boil
     - Boil
     id: Boil
-    position: {x: 192, y: 304}
+    position: {x: 192, y: 317}
     nextDataIds: []
     eventText: Boil
+  - sceneData: {fileID: 0}
+    portIds:
+    - wash
+    - wash
+    - wash
+    - wash
+    - wash
+    id: wash
+    position: {x: -109, y: 271}
+    nextDataIds: []
+    eventText: wash
+  - sceneData: {fileID: 11400000, guid: c8f719d101f60ca4796c9e3ce60c0e22, type: 2}
+    portIds:
+    - ba9d3f31-9343-4dd4-a6c8-ea84251f7131
+    id: cube
+    position: {x: -312, y: 92}
+    nextDataIds:
+    - Fry%nothing
+    - Boil%boilCube
+    - wash%wash
+    - cut%fryCube
+    eventText: 
