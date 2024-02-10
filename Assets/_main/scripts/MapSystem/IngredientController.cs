@@ -45,7 +45,7 @@ namespace _main.scripts.MapSystem
             Debug.Log($"{cookType} {idIngredient} to {nodeData.id}");
             idIngredient = nodeData.id;
             
-            var tmpPrefab = Instantiate(nodeData.sceneData.prefab,prefab.transform.position,prefab.transform.rotation,transform); 
+            var tmpPrefab = Instantiate(nodeData.sceneData.prefab.transform.GetChild(0).gameObject,prefab.transform.position,prefab.transform.rotation,transform); 
             Destroy(prefab);
             prefab = tmpPrefab;
         }

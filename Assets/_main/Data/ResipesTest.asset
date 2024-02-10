@@ -24,3 +24,6 @@ MonoBehaviour:
     - "\u043A\u0443\u0447\u043A\u0430 \u043E\u0433\u0443\u0440\u0446\u043E\u0432%1"
     ResultName: "\u0432\u0438\u043D\u0435\u0433\u0440\u0435\u0434"
     Result: {fileID: 885024229625051425, guid: ef245114f149162409970aaef8bedea6, type: 3}
+  - Recipe: []
+    ResultName: "\u0432\u0438\u043D\u0435\u0433\u0440\u0435\u0434"
+    Result: {fileID: 885024229625051425, guid: ef245114f149162409970aaef8bedea6, type: 3}
