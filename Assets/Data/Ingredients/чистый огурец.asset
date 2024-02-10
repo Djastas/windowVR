@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246287d4be89418f99a7efd0d572f3ef, type: 3}
+  m_Name: "\u0447\u0438\u0441\u0442\u044B\u0439 \u043E\u0433\u0443\u0440\u0435\u0446"
+  m_EditorClassIdentifier: 
+  sceneName: "\u0447\u0438\u0441\u0442\u044B\u0439 \u043E\u0433\u0443\u0440\u0435\u0446"
+  inObjId:
+  - 1
+  outObjId:
+  - boil
+  - cut
+  - wash
+  prefab: {fileID: 484899259861249692, guid: 5381fdf9a0584f84c911900d108fcaab, type: 3}
