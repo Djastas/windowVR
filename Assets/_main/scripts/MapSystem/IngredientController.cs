@@ -11,20 +11,29 @@ namespace _main.scripts.MapSystem
         [SerializeField] private GameObject prefab;
         public string idIngredient;
         
-        public string tmpCook; // for test
-        [SerializeField] private UnityEvent<string> @event;
+        public string tmpCook; 
+        [SerializeField] private UnityEvent<string> onEventNode;
 
         private void Start()
         {
-            @event.AddListener( EventSeparator.Instance.InvokeEvent);
+            onEventNode.AddListener( EventSeparator.Instance.InvokeEvent);
         }
 
         public void Cook(string cookType)
         {
             var node = map.nodes.Find(t => t.id == idIngredient); // find ingredient on map
-            var nodeData = map.nodes.Find(t => t.id == DictionaryUtils.Split(node.nextDataIds)[cookType]); // node on out
+            NodeData nodeData = null;
             
-            
+            try
+            {
+                 nodeData = map.nodes.Find(t => t.id == DictionaryUtils.Split(node.nextDataIds)[cookType]); // node on out
+            }
+            catch(Exception e)
+            {
+                Debug.LogWarning($"cant find cook way to {idIngredient} in {cookType}",this);
+                return;
+            }
+
             if (node == null)
             {
                 Debug.LogError($"cant find '{idIngredient}' in '{map.name}'",this);
@@ -37,9 +46,10 @@ namespace _main.scripts.MapSystem
                 return;
             } 
             
+            
             if (nodeData.id == "Event")
             {
-                @event?.Invoke(nodeData.eventText);
+                onEventNode?.Invoke(nodeData.eventText);
             }
             
             Debug.Log($"{cookType} {idIngredient} to {nodeData.id}");

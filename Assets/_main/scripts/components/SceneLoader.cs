@@ -7,7 +7,9 @@ namespace _main.scripts.components
     {
         public void Load(string name)
         {
-            SceneManager.LoadSceneAsync(name);
+            GlobalFields.LoadSceneName = name;
+            SceneManager.LoadScene("LoadingScene");
+            
         }
     }
 }

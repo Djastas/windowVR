@@ -55,6 +55,18 @@ namespace _main.scripts.Editor
                 Selection.activeObject = dataInstance;
             }
         }
+
+        public List<GameObject> prefabs;
+        public GameObject childPrefab;
+        
+        [Button(ButtonSizes.Large)]
+        public void CreateChild()
+        {
+            foreach (var prefab in prefabs)
+            {
+                Instantiate(childPrefab, prefab.transform);
+            }
+        }
     }
 [Serializable]
     public class IngredientData

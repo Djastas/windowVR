@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector.Editor;
-using UnityEditor;
 using UnityEditor.UIElements;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace _main.scripts.MapSystem
@@ -52,13 +50,13 @@ namespace _main.scripts.MapSystem
             };
             toolbar.Add(sceneDataField);
 
-            var textField = new TextField();
-            toolbar.Add(textField);
             
             var addAnswerButton = new Button(() => _graphView.AddNode((SceneInOutData) sceneDataField.value));
-            addAnswerButton.text = "Add Answer";
+            addAnswerButton.text = "SceneData Node";
             toolbar.Add(addAnswerButton);
             
+            var textField = new TextField();
+            toolbar.Add(textField);
             
             var addEventButton = new Button(() => _graphView.AddEventNode(textField.value));
             addEventButton.text = "Add eventNode";

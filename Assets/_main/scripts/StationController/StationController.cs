@@ -97,19 +97,18 @@ namespace _main.scripts
                 
                 if (recipesRecipe.Recipe.Except(combine).Any()) continue; // if in cookStation has all Recipe
                 
-                Debug.Log("in cookStation now:");
+                Debug.Log("in cookStation now:" ,this);
                 foreach (var s in combine)
                 {
                     Debug.Log(s);
                 }
                 
-                Debug.Log("in recipes now:");
+                Debug.Log("in recipes now:" ,this);
                 foreach (var s in recipesRecipe.Recipe)
                 {
                     Debug.Log(s);
                 }
-                
-                
+
                 cookName = recipesRecipe.ResultName; // set cook name
 
                 foreach (var ingredientTime in IngredientsTimes)

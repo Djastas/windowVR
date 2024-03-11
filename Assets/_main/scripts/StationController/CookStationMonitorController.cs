@@ -8,6 +8,10 @@ namespace _main.scripts
     {
         [SerializeField] private StationController cookStation;
         [SerializeField] private TMP_Text text;
+        
+        [SerializeField] private Transform group;
+        [SerializeField] private List<CookStationMonitorElementUpdater> activeInfoElements;
+        [SerializeField] private GameObject infoHolderPrefabs;
 
         private void Start()
         {
@@ -15,17 +19,31 @@ namespace _main.scripts
             cookStation.onRemoveIngredient.AddListener(UpdateMonitor);
         }
 
-        private void UpdateMonitor()
+        public void UpdateMonitor()
         {
-            var updateData = cookStation.GetIngredients();
-            var tmp = "";
-            foreach (var (vName,vCount) in updateData)
+            foreach (var infoElement in activeInfoElements)
             {
-                tmp += $"{vName} : {vCount} \n"; // format data 
+                activeInfoElements.Remove(infoElement);
+                Destroy(infoElement.gameObject);
             }
-            text.text = tmp;
-        }
 
-       
+
+            foreach (var ingredientsTime in cookStation.IngredientsTimes)
+            {
+                var cookStationMonitorElementUpdater = Instantiate(infoHolderPrefabs, group)
+                    .GetComponent<CookStationMonitorElementUpdater>();
+                if (cookStationMonitorElementUpdater == null)
+                {
+                    Debug.LogError("info holder prefab not contain 'CookStationMonitorElementUpdater' ", this);
+                    return;
+                }
+
+                cookStationMonitorElementUpdater.timeComponent = ingredientsTime.Timer;
+                cookStationMonitorElementUpdater.ingredientName = ingredientsTime.Ingredient.idIngredient;
+                cookStationMonitorElementUpdater.monitorController = this;
+                cookStationMonitorElementUpdater.Init();
+                activeInfoElements.Add(cookStationMonitorElementUpdater);
+            }
+        }
     }
 }

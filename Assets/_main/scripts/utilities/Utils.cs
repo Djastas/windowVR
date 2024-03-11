@@ -4,7 +4,9 @@ namespace _main.scripts.MapSystem
 {
     public class DictionaryUtils
     {
-        public static List<string> Combine(Dictionary<string ,string> input)
+        
+       
+        public static List<string> Combine(Dictionary<string ,string> input) 
         {
             var tmp = new List<string>();
             foreach (var value in input)
@@ -13,7 +15,7 @@ namespace _main.scripts.MapSystem
                 tmp.Add(i);
             }
             return tmp;
-        }
+        } // combine Dictionary to list. example: Key: A, Value: 1 -> A%1
         
 
         public static Dictionary<string ,string> Split( List<string> input)

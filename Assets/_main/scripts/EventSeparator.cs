@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,6 +27,12 @@ namespace _main.scripts
     public class CustomEvent
     {
         public string Key;
+
+        [Button]
+        public void InvokeValue()
+        {
+            Value?.Invoke();
+        }
         public UnityEvent Value;
     }
 }
