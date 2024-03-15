@@ -28,7 +28,7 @@ namespace _main.scripts.MapSystem
             {
                  nodeData = map.nodes.Find(t => t.id == DictionaryUtils.Split(node.nextDataIds)[cookType]); // node on out
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 Debug.LogWarning($"cant find cook way to {idIngredient} in {cookType}",this);
                 return;

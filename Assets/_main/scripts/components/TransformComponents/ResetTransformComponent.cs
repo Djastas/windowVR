@@ -107,7 +107,7 @@ namespace _main.scripts.components
 
 
         [Flags]
-        private enum PosRot
+        public enum PosRot
         {
         AllPos = 7,
         PosX = 1,
