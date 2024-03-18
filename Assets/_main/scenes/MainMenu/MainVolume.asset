@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 8.741554
+    m_Value: 7.4854946
   compensation:
     m_OverrideState: 1
     m_Value: 0
@@ -403,10 +403,10 @@ MonoBehaviour:
     m_Value: 0
   top:
     m_OverrideState: 1
-    m_Value: {r: 3.6589532, g: 1.9209504, b: 2.1931672, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   middle:
     m_OverrideState: 1
-    m_Value: {r: 0.24705882, g: 0.12187764, b: 0.06274511, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   bottom:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}

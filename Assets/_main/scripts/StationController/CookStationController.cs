@@ -16,6 +16,8 @@ namespace _main.scripts
 
         public override void OnIngredientAdd(IngredientController tmpIngredient)
         {
+            Cook();
+            
             tmpIngredient.tmpCook = burntType;
 
             var tmpTimeComponent = tmpIngredient.gameObject.AddComponent<TimeComponent>();
