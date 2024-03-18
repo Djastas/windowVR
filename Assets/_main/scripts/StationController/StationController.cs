@@ -13,7 +13,8 @@ namespace _main.scripts
     public class StationController :  MonoBehaviour
     {
         public List<IngredientTime> IngredientsTimes = new ();
-
+        
+        [SerializeField] protected bool autoCook = true;
         
         public UnityEvent onAddIngredient;
         public UnityEvent onRemoveIngredient;
@@ -83,6 +84,7 @@ namespace _main.scripts
 [Button]
         public void Cook()
         {
+            
             if (recipes == null)
             {
                 Debug.LogError("set recipes in cook station" , this);

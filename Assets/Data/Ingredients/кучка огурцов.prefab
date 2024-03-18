@@ -49,7 +49,7 @@ MonoBehaviour:
   prefab: {fileID: 6379176910654081942}
   idIngredient: "\u043A\u0443\u0447\u043A\u0430 \u043E\u0433\u0443\u0440\u0446\u043E\u0432"
   tmpCook: 
-  event:
+  onEventNode:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6379176910654081942
@@ -81,7 +81,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6379176910654081942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.000269, y: 0.000915, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []

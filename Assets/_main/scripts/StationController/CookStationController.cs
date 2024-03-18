@@ -16,7 +16,11 @@ namespace _main.scripts
 
         public override void OnIngredientAdd(IngredientController tmpIngredient)
         {
-            Cook();
+            // if (autoCook)
+            // {
+            //     Cook();
+            // }
+           
             
             tmpIngredient.tmpCook = burntType;
 
